@@ -1,6 +1,13 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    /* Margin bottom by footer height */
+    margin-bottom: 80px;
 }
 
 .zf-green {
@@ -30,4 +37,12 @@ div.container a.navbar-brand > img {
     display: inline;
     margin-right: 4px;
     margin-top: -2px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 80px;
 }
