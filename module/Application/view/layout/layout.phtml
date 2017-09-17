@@ -35,11 +35,7 @@
                     <a class="navbar-brand" href="<?= $this->url('home') ?>">Home</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?= $this->url('blog') ?>">Blog</a></li>
-                        <li class="active"><a href="<?= $this->url('tutorial') ?>">Tutorial</a></li>
-                        <li class="active"><a href="<?= $this->url('admin') ?>">Admin</a></li>
-                    </ul>
+                    <?= $this->navigation('top_navigation')->menu()->setUlClass('nav navbar-nav')->render() ?>
                 </div>
             </div>
         </nav>
@@ -49,7 +45,7 @@
         <footer class="footer">
             <hr>
             <div class="container">
-            <p>&copy; <?= date('Y') ?> by PHP-User. All rights reserved.</p>
+            <p>&copy; <?= $this->getYear() ?> by PHP-User. All rights reserved.</p>
             </div>
         </footer>
         <?= $this->inlineScript() ?>

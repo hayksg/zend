@@ -34,4 +34,20 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'navigation' => [
+        'top_navigation' => [
+            'tutorial' => [
+                'label' => 'Tutorial',
+                'route' => 'tutorial',
+            ],
+            'blog' => [
+                'label' => 'Blog',
+                'route' => 'blog',
+            ],
+            'admin' => [
+                'label' => 'Admin',
+                'route' => 'admin',
+            ],
+        ],
+    ],
 ];
