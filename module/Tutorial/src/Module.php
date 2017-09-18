@@ -3,6 +3,8 @@
 namespace Tutorial;
 
 use Tutorial\Controller\IndexController;
+use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
@@ -17,7 +19,11 @@ class Module
     {
         return [
             'invokables' => [
-                'getGreeting' => Service\GreetingService::class,
+                'eventService' => Service\EventService::class,
+            ],
+            'factories' => [
+                'getGreeting'       => Service\GreetingServiceFactory::class,
+                'greetingAggregate' => Event\GreetingServiceListenerAggregateFactory::class,
             ],
         ];
     }
@@ -35,4 +41,32 @@ class Module
             ],
         ];
     }
+
+    /*public function init(ModuleManagerInterface $moduleManager)
+    {
+        $moduleManager->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            [$this, 'onInit'],
+            100
+        );
+    }
+
+    public function onInit()
+    {
+        echo "Hello, I am init";
+    }*/
+
+    /*public function onBootstrap(MvcEvent $event)
+    {
+        $event->getApplication()->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            function ($event) {
+                $controller = $event->getTarget();
+                $controller->layout('layout/layoutDefault');
+            },
+            100
+        );
+    }*/
 }
