@@ -46,3 +46,18 @@ div.container a.navbar-brand > img {
     /* Set the fixed height of the footer here */
     height: 80px;
 }
+
+.success-message, .error-message {
+    display: inline-block;
+    list-style: none;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.success-message {
+    background: green;
+}
+
+.error-message {
+    background: #d00;
+}

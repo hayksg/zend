@@ -42,3 +42,16 @@ $this->headTitle($headTitle);
     </div>
 </div>
 <div><?= $this->escapeHtml($this->greeting) ?></div>
+<div><?= $this->escapeHtml($this->date) ?></div>
+<hr>
+<?php
+echo $this->flashMessenger()->render('success', ['success-message']);
+echo $this->flashMessenger()->render('error',   ['error-message']);
+?>
+<hr>
+<form action="/tutorial" method="post">
+    <input type="text" name="title">
+    <button>Send</button>
+</form>
+<hr>
+<p><a href="<?= $this->url('tutorial', ['action' => 'example']) ?>">Example</a></p>

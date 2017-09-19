@@ -19,8 +19,13 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
+        if ($this->request->isPost()) {
+            $this->prg();
+        }
+
         return new ViewModel([
             'greeting' => $this->getGreetingService()->getGreeting(),
+            'date'     => $this->getDate(),
             //'greeting' => 'Hello!!!',
         ]);
     }
@@ -33,5 +38,28 @@ class IndexController extends AbstractActionController
     public function getGreetingService()
     {
         return $this->greetingService;
+    }
+
+    public function exampleAction()
+    {
+        //return $this->redirect()->toUrl('http://rambler.ru');
+        //return $this->forward()->dispatch(\Application\Controller\IndexController::class, ['action' => 'index']);
+
+        //$this->getEvent()->getRouteMatch()->getParam();
+        //$this->layout('layout/layoutDefault');
+
+        $successMessage = 'Success message';
+        $errorMessage = 'Error message';
+
+        //$this->flashMessenger()->addSuccessMessage($successMessage);
+        //$this->flashMessenger()->addErrorMessage($errorMessage);
+        //return $this->redirect()->toRoute('tutorial');
+
+        $widget = $this->forward()->dispatch(\Application\Controller\IndexController::class, ['action' => 'index']);
+
+        $view = new ViewModel();
+        $view->addChild($widget, 'widget');
+        $view->setTemplate('tutorial/index/exampleTemplate');
+        return $view;
     }
 }

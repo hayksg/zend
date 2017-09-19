@@ -10,9 +10,13 @@ return [
     'router' => [
         'routes' => [
             'tutorial' => [
-                'type' => Literal::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route'    => '/tutorial',
+                    'route'       => '/tutorial[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-z]+',
+                        'id'     => '[0-9]+',
+                    ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
