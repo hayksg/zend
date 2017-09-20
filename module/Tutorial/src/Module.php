@@ -47,6 +47,7 @@ class Module
         return [
             'invokables' => [
                 'getDate' => Controller\Plugin\GetDate::class,
+                'clearString' => Controller\Plugin\ClearString::class,
             ],
         ];
     }
