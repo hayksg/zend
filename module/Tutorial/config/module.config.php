@@ -5,6 +5,7 @@ namespace Tutorial;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\Router\Http\Regex;
+use Zend\Router\Http\Method;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -25,13 +26,10 @@ return [
                 ],
             ],
             /*'article' => [
-                'type' => Segment::class,
+                'type' => Regex::class,
                 'options' => [
-                    'route'       => '/article[/:action[/:id]]',
-                    'constraints' => [
-                        'action' => '[a-z]+',
-                        'id'     => '[0-9]+',
-                    ],
+                    'regex' => '/article(/(?<action>[a-z]+)(/(?<id>[0-9]+))?)?',
+                    'spec' => '/%action%/%id%',
                     'defaults' => [
                         'controller' => Controller\ArticleController::class,
                         'action'     => 'index',
@@ -39,15 +37,52 @@ return [
                 ],
             ],*/
             'article' => [
-                'type' => Regex::class,
+                'type' => Segment::class,
                 'options' => [
-                    //'regex' => '/article(/(?<slug>[a-z]+)(/(?<id>[0-9]+))?)?',
-                    'regex' => '/article(/(?<action>[a-z]+)(/(?<id>[0-9]+))?)?',
-                    'spec'  => '/%action%/%id%/',
-
+                    'route' => '/article[/:action[/:id]]',
+                    'constraints'  => [
+                        'action' => '[a-z-]+',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\ArticleController::class,
+                        //'action'     => rand(0, 1) ? 'add' : 'index',
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'articleAction' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route' => '/article-action[/:id]',
+                    'constraints' => [
+                        'id' => '[0-9]+',
+                    ],
                     'defaults' => [
                         'controller' => Controller\ArticleController::class,
                         'action'     => 'index',
+                    ],
+                ],
+                'child_routes' => [
+                    'get' => [
+                        'type' => Method::class,
+                        'options' => [
+                            'verb' => 'get',
+                            'defaults' => [
+                                'controller' => Controller\ArticleController::class,
+                                'action'     => 'add',
+                            ],
+                        ],
+                    ],
+                    'post' => [
+                        'type' => Method::class,
+                        'options' => [
+                            'verb' => 'post',
+                            'defaults' => [
+                                'controller' => Controller\ArticleController::class,
+                                'action'     => 'post',
+                            ],
+                        ],
                     ],
                 ],
             ],
