@@ -61,3 +61,7 @@ div.container a.navbar-brand > img {
 .error-message {
     background: #d00;
 }
+
+.color-green {
+    color: green;
+}

@@ -1,4 +1,53 @@
 <?php
+
+$str = '-';
+
+/*$stringLength = new \Zend\Validator\StringLength(['min' => 2, 'max' => 10]);
+$stringLength->setMessages([
+    \Zend\Validator\StringLength::TOO_SHORT => 'Too short',
+    \Zend\Validator\StringLength::TOO_LONG  => 'Too long',
+]);
+
+$alpha = new \Zend\I18n\Validator\Alpha();
+$alpha->setMessages([
+    \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'Not alpha',
+]);
+
+//$alpha->setMessage('Not alpha', \Zend\I18n\Validator\Alpha::NOT_ALPHA);
+
+
+$validatorChain = new \Zend\Validator\ValidatorChain();
+$validatorChain->attach($stringLength);
+$validatorChain->attach($alpha);
+*/
+
+/*$validatorChain = new \Zend\Validator\ValidatorChain();
+$validatorChain->attachByName('StringLength', ['min' => 2, 'max' => 10]);
+$validatorChain->attachByName('Alpha');
+
+
+if ($validatorChain->isValid($str)) {
+    echo 'Good';
+} else {
+    foreach ($validatorChain->getMessages() as $message) {
+        echo "<div>{$message}</div>";
+    }
+}*/
+
+/*$value = 10.0;
+
+$floatValidator = new \Tutorial\Validator\FloatValidator();
+
+if ($floatValidator->isValid($value)) {
+    echo 'Yes';
+} else {
+    foreach ($floatValidator->getMessages() as $message) {
+        echo "<div>{$message}</div>";
+    }
+}*/
+
+?>
+<?php
 $headTitle = 'Example';
 $this->headTitle($headTitle);
 ?>

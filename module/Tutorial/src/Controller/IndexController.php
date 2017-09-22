@@ -2,6 +2,8 @@
 
 namespace Tutorial\Controller;
 
+use Zend\Http\Headers;
+use Zend\Http\Response\Stream;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ViewModel;
@@ -55,11 +57,36 @@ class IndexController extends AbstractActionController
         //$this->flashMessenger()->addErrorMessage($errorMessage);
         //return $this->redirect()->toRoute('tutorial');
 
-        $widget = $this->forward()->dispatch(\Application\Controller\IndexController::class, ['action' => 'index']);
+        //$widget = $this->forward()->dispatch(\Application\Controller\IndexController::class, ['action' => 'index']);
 
         $view = new ViewModel();
-        $view->addChild($widget, 'widget');
-        $view->setTemplate('tutorial/index/exampleTemplate');
+        //$view->addChild($widget, 'widget');
+        //$view->setTemplate('tutorial/index/exampleTemplate');
         return $view;
+    }
+
+    public function downloadAction()
+    {
+        chdir(getcwd() . '/public/img/');
+        $file = getcwd() . DIRECTORY_SEPARATOR . 'c.jpg';
+
+        if (is_file($file)) {
+            $fileName = basename($file);
+            $fileSize = filesize($file);
+
+            $stream = new Stream();
+            $stream->setStream(fopen($file, 'r'));
+            $stream->setStreamName($fileName);
+            $stream->setStatusCode(200);
+
+            $headers = new Headers();
+            $headers->addHeaderLine('Content-Type: application/octet-stream');
+            $headers->addHeaderLine('Content-Disposition: attachment; filename=' . $fileName);
+            $headers->addHeaderLine('Content-Length: ' . $fileSize);
+            $headers->addHeaderLine('Cache-Control: no-store, must-revalidate');
+
+            $stream->setHeaders($headers);
+            return $stream;
+        }
     }
 }
