@@ -7,3 +7,46 @@ $this->headTitle($headTitle);
         <h3><?= $headTitle ?></h3>
     </div>
 </div>
+<div class="row">
+    <br>
+    <div class="col-sm-3">
+        <ul class="list-unstyled">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+            <li><a href="#">Link 6</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <?php if (! $this->articles) : ?>
+        <h3>List is empty</h3>
+        <?php else : ?>
+            <?php foreach ($this->articles as $article) : ?>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><?= $this->escapeHtml($article->getTitle()) ?></h3>
+                        </div>
+                        <div class="panel-body">
+                            <img src="<?= $this->basePath() ?>/img/blog/no-image.jpg"
+                                 width="100"
+                                 heigth="80"
+                                 class="img-responsive blog-image"
+                                 alt="<?= $this->escapeHtml($article->getTitle()) . '- image' ?>"
+                            >
+                            <div><?= $this->escapeHtml($article->getShortContent()) ?></div>
+                        </div>
+                        <div class="panel-footer">
+                            <div><a href="#">Read more &Gt;</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>
+<br>
