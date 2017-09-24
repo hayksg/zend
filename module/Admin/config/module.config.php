@@ -18,6 +18,37 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'category' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'       => '/category[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CategoryController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                    'article' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'       => '/article[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ArticleController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
@@ -35,18 +66,44 @@ return [
         ],
     ],
     'navigation' => [
-        'top_navigation' => [
-            'tutorial' => [
-                'label' => 'Tutorial',
-                'route' => 'tutorial',
-            ],
-            'blog' => [
-                'label' => 'Blog',
-                'route' => 'blog',
-            ],
+        'admin_breadcrumbs' => [
             'admin' => [
                 'label' => 'Admin',
                 'route' => 'admin',
+                'pages' => [
+                    'category' => [
+                        'label' => 'Categories',
+                        'route' => 'admin/category',
+                        'pages' => [
+                            'add' => [
+                                'label' => 'Add category',
+                                'route' => 'admin/category',
+                                'action' => 'add',
+                            ],
+                            'edit' => [
+                                'label' => 'Edit category',
+                                'route' => 'admin/category',
+                                'action' => 'edit',
+                            ],
+                        ],
+                    ],
+                    'article' => [
+                        'label' => 'Articles',
+                        'route' => 'admin/article',
+                        'pages' => [
+                            'add' => [
+                                'label' => 'Add article',
+                                'route' => 'admin/article',
+                                'action' => 'add',
+                            ],
+                            'edit' => [
+                                'label' => 'Edit article',
+                                'route' => 'admin/article',
+                                'action' => 'edit',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],

@@ -1,0 +1,6 @@
+<?php
+$headTitle = 'Articles';
+$this->headTitle($headTitle);
+?>
+<?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<div><a href="<?= $this->url('admin/article', ['action' => 'add']) ?>" class="btn btn-default">Add article</a></div>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Blog\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Article;
 
-class IndexController extends AbstractActionController
+class ArticleController extends AbstractActionController
 {
     private $entityManager;
     private $articleRepository;
@@ -20,20 +20,16 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-        $articles = $this->articleRepository->findAll();
-
-        return new ViewModel([
-            'articles' => $articles,
-        ]);
+        return new ViewModel();
     }
 
-    public function articleAction()
+    public function addAction()
     {
-        $id = intval($this->getEvent()->getRouteMatch()->getParam('id', 0));
-        $article = $this->articleRepository->find($id);
+        return new ViewModel();
+    }
 
-        return new ViewModel([
-            'article' => $article,
-        ]);
+    public function editAction()
+    {
+        return new ViewModel();
     }
 }

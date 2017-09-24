@@ -23,6 +23,14 @@ $(function(){
 
     $('#back-to-top').tooltip('show');
 
+    /////   for empty breadcrumb   ////////////////////////////////////////////
+
+    if ($('.breadcrumb li').length == 0) {
+        $('ul.breadcrumb').remove();
+    }
+
     /////
+
+
 
 });

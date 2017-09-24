@@ -20,10 +20,9 @@ $this->headTitle($headTitle);
         </ul>
     </div>
     <div class="col-sm-9">
-        <?php if (! $this->articles) : ?>
+        <?php if (! $this->article) : ?>
         <h3>List is empty</h3>
         <?php else : ?>
-            <?php foreach ($this->articles as $article) : ?>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="panel panel-default">
@@ -32,24 +31,20 @@ $this->headTitle($headTitle);
                         </div>
                         <div class="panel-body">
                             <img src="<?= $this->basePath() ?>/img/blog/no-image.jpg"
-                                 width="100"
-                                 heigth="80"
-                                 class="img-responsive blog-image"
+                                 width="400"
+                                 heigth="300"
+                                 class="img-responsive center-block"
                                  alt="<?= $this->escapeHtml($article->getTitle()) . '- image' ?>"
                             >
-                            <div><?= $this->escapeHtml($article->getShortContent()) ?></div>
+                            <hr>
+                            <div><?= $this->escapeHtml($article->getContent()) ?></div>
                         </div>
                         <div class="panel-footer">
-                            <div>
-                                <a href="<?= $this->url('blog', ['action' => 'article', 'id' => (int)$article->getId()]) ?>">
-                                    Read more &Gt;
-                                </a>
-                            </div>
+                            <div><a href="<?= $this->url('blog') ?>">&Lt; Back</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
         <?php endif; ?>
     </div>
 </div>

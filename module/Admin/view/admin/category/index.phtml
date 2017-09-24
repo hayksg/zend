@@ -1,0 +1,6 @@
+<?php
+$headTitle = 'Categories';
+$this->headTitle($headTitle);
+?>
+<?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<div><a href="<?= $this->url('admin/category', ['action' => 'add']) ?>" class="btn btn-default">Add category</a></div>

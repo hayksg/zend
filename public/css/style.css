@@ -83,6 +83,15 @@ a:focus, a:hover {
     display:none;
 }
 
+.breadcrumb {
+    padding: 2px 10px;
+    margin-bottom: 0;
+}
+
+.admin-breadcrumb {
+    margin-top: 24px;
+}
+
 
 
 
