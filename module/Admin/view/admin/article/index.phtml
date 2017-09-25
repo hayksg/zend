@@ -4,3 +4,59 @@ $this->headTitle($headTitle);
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div><a href="<?= $this->url('admin/article', ['action' => 'add']) ?>" class="btn btn-default">Add article</a></div>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <?php if (! $this->articles) : ?>
+        <h4>List is empty</h4>
+        <?php else : ?>
+        <h4>Articles list</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Short content</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Is public</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($this->articles as $article) : ?>
+                <tr>
+                    <td><?= (int)++$this->articleNumberInTable ?></td>
+                    <td><?= (int)$article->getId() ?></td>
+                    <td><?= $this->escapeHtml($article->getTitle()) ?></td>
+                    <td><?= $this->escapeHtml($article->getCategory()->getName()) ?></td>
+                    <td><?= $this->escapeHtml($article->getShortContent()) ?></td>
+                    <td><?= $this->escapeHtml($article->getContent()) ?></td>
+                    <td>
+                        <img src="<?= $this->basePath() ?><?= $this->escapeHtml($article->getImage()) ?>"
+                             class="img-responsive"
+                             width="60"
+                             height="40"
+                        >
+                    </td>
+                    <td><?= $this->escapeHtml($article->getIsPublic()) ?></td>
+                    <td>
+                        <a href="#">Edit</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#">Delete</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+        <?php
+            echo $this->paginationControl(
+                $this->articles,
+                'sliding',
+                'partial/paginator',
+                ['route' => 'admin/article']
+            );
+        ?>
+        <?php endif; ?>
+    </div>
+</div>

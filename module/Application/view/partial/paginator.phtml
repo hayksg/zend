@@ -1,18 +1,14 @@
 <?php if ($this->pageCount): ?>
-    <div>
+    <div class="text-center">
         <ul class="pagination">
             <!-- Previous page link -->
             <?php if (isset($this->previous)): ?>
                 <li>
-                    <a href="<?= $this->url($this->route, [], ['query' => ['page' => $this->previous]]) ?>">
-                        &lt;&lt;
-                    </a>
+                    <a href="<?= $this->url($this->route, ['page' => $this->previous]) ?>">&lt;&lt;</a>
                 </li>
             <?php else: ?>
                 <li class="disabled">
-                    <a href="#">
-                        &lt;&lt;
-                    </a>
+                    <a href="#" onclick="return false">&lt;&lt;</a>
                 </li>
             <?php endif ?>
 
@@ -20,13 +16,11 @@
             <?php foreach ($this->pagesInRange as $page): ?>
                 <?php if ($page !== $this->current): ?>
                     <li>
-                        <a href="<?= $this->url($this->route, [], ['query' => ['page' => $page]]) ?>">
-                            <?= $page ?>
-                        </a>
+                        <a href="<?= $this->url($this->route, ['page' => $page]) ?>"><?= $page ?></a>
                     </li>
                 <?php else: ?>
                     <li class="active">
-                        <a href="#"><?= $page ?></a>
+                        <a href="#"  onclick="return false"><?= $page ?></a>
                     </li>
                 <?php endif ?>
             <?php endforeach ?>
@@ -34,15 +28,11 @@
             <!-- Next page link -->
             <?php if (isset($this->next)): ?>
                 <li>
-                    <a href="<?= $this->url($this->route, [], ['query' => ['page' => $this->next]]) ?>">
-                        &gt;&gt;
-                    </a>
+                    <a href="<?= $this->url($this->route, ['page' => $this->next]) ?>">&gt;&gt;</a>
                 </li>
             <?php else: ?>
                 <li class="disabled">
-                    <a href="#">
-                        &gt;&gt;
-                    </a>
+                    <a href="#"  onclick="return false">&gt;&gt;</a>
                 </li>
             <?php endif ?>
         </ul>

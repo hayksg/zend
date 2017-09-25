@@ -6,6 +6,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Article;
+use Zend\Paginator\Paginator;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
 
 class IndexController extends AbstractActionController
 {
@@ -20,10 +23,22 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-        $articles = $this->articleRepository->findAll();
+        $paginator = '';
+
+        $queryBuilder = $this->articleRepository->getQueryBuilder();
+        $adaptor = new DoctrinePaginator(new ORMPaginator($queryBuilder));
+        $paginator = new Paginator($adaptor);
+
+        if ($paginator) {
+            $currentPageNumber = (int)$this->params()->fromRoute('page', 0);
+            $paginator->setCurrentPageNumber($currentPageNumber);
+
+            $itemCountPerPage = 10;
+            $paginator->setItemCountPerPage($itemCountPerPage);
+        }
 
         return new ViewModel([
-            'articles' => $articles,
+            'articles' => $paginator,
         ]);
     }
 

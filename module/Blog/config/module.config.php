@@ -12,8 +12,9 @@ return [
             'blog' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route'    => '/blog[/:action[/:id]]',
+                    'route'    => '/blog[/page/:page][/:action[/:id]]',
                     'constraints' => [
+                        'page'   => '[0-9]+',
                         'action' => '[a-z]+',
                         'id'     => '[0-9]+',
                     ],

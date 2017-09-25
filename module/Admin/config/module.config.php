@@ -37,8 +37,9 @@ return [
                     'article' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/article[/:action[/:id]]',
+                            'route'       => '/articles[/page/:page][/:action[/:id]]',
                             'constraints' => [
+                                'page'   => '[0-9]+',
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',
                             ],
