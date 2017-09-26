@@ -92,6 +92,14 @@ a:focus, a:hover {
     margin-top: 24px;
 }
 
+.menu_vert li a {
+    padding-left: 0;
+}
+
+#left-aside li .menu_vert li a {
+    padding-left: 10px;
+}
+
 
 
 
