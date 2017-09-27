@@ -1,4 +1,6 @@
 <?php
+$this->headScript()->appendScript('$(function(){ $("ul.nav.navbar-nav li").eq(1).addClass("active") });');
+
 $headTitle = 'Blog';
 $this->headTitle($headTitle);
 ?>
@@ -7,17 +9,10 @@ $this->headTitle($headTitle);
         <h3><?= $headTitle ?></h3>
     </div>
 </div>
+<br>
 <div class="row">
-    <br>
-    <div class="col-sm-3">
-        <ul class="list-unstyled">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
-            <li><a href="#">Link 6</a></li>
-        </ul>
+    <div class="col-sm-3" id="left-aside">
+        <?= $this->getCategories() ?>
     </div>
     <div class="col-sm-9">
         <?php if (! $this->article) : ?>

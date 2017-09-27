@@ -19,4 +19,17 @@ class ArticleRepository extends EntityRepository
 
         return $qb ?: false;
     }
+
+    public function getQueryBuilderForCategory($categoryId)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('a');
+        $qb->from(Article::class, 'AS a');
+        $qb->where('a.isPublic = 1');
+        $qb->andWhere('a.category = :categoryId');
+        $qb->orderBy('a.id', 'DESC');
+        $qb->setParameter('categoryId', (int)$categoryId);
+
+        return $qb ?: false;
+    }
 }

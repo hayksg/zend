@@ -12,7 +12,7 @@ return [
             'blog' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route'    => '/blog[/page/:page][/:action[/:id]]',
+                    'route'    => '/[blog[/page/:page]]',
                     'constraints' => [
                         'page'   => '[0-9]+',
                         'action' => '[a-z]+',
@@ -20,6 +20,34 @@ return [
                     ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'category' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/blog/category[/:id][/page/:page]',
+                    'constraints' => [
+                        'page'   => '[0-9]+',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\CategoryController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'particle' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route'    => '/blog/particle[/:id]',
+                    'constraints' => [
+                        'action' => '[a-z]+',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => \Blog\Controller\ParticleController::class,
                         'action'     => 'index',
                     ],
                 ],

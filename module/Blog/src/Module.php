@@ -3,6 +3,7 @@
 namespace Blog;
 
 use Doctrine\ORM\EntityManager;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
@@ -19,6 +20,16 @@ class Module
             'factories' => [
                 Controller\IndexController::class => function ($container) {
                     return new Controller\IndexController(
+                        $container->get(EntityManager::class)
+                    );
+                },
+                Controller\CategoryController::class => function ($container) {
+                    return new Controller\CategoryController(
+                        $container->get(EntityManager::class)
+                    );
+                },
+                Controller\ParticleController::class => function ($container) {
+                    return new Controller\ParticleController(
                         $container->get(EntityManager::class)
                     );
                 },

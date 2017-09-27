@@ -38,7 +38,7 @@ class GetCategories extends AbstractHelper
         if (is_array($categories) && isset($categories[$catId])) {
             $output .= '<ul class="menu_vert">';
             foreach ($categories[$catId] as $category) {
-                $output .= '<li><a href="#' . (int)$category->getId() . '">' . $category->getName() . '</a>';
+                $output .= '<li><a href="/blog/category/' . (int)$category->getId() . '">' . $category->getName() . '</a>';
                 $output .= $this->buildTree($categories, $category->getId());
                 $output .= '</li>';
             }

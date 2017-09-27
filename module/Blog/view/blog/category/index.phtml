@@ -1,5 +1,7 @@
 <?php
-$headTitle = 'Blog';
+$this->headScript()->appendScript('$(function(){ $("ul.nav.navbar-nav li").eq(1).addClass("active") });');
+
+$headTitle = $this->escapeHtml($this->categoryName);
 $this->headTitle($headTitle);
 ?>
 <div class="row">
@@ -13,8 +15,8 @@ $this->headTitle($headTitle);
         <?= $this->getCategories() ?>
     </div>
     <div class="col-sm-9">
-        <?php if (! $this->articles) : ?>
-        <h3>List is empty</h3>
+        <?php if (count($this->articles) === 0) : ?>
+        <h5>Category is empty</h5>
         <?php else : ?>
             <?php foreach ($this->articles as $article) : ?>
             <div class="row">
@@ -48,10 +50,9 @@ $this->headTitle($headTitle);
             echo $this->paginationControl(
                 $this->articles,
                 'sliding',
-                'partial/paginator',
-                ['route' => 'blog']
+                'partial/paginatorForCategoryPage',
+                ['route' => 'category']
             );
-
             ?>
         <?php endif; ?>
     </div>

@@ -34,6 +34,11 @@ class Module
                         $container->get(EntityManager::class)
                     );
                 },
+                'GetRouteParams' => function ($container) {
+                    return new View\Helper\GetRouteParams(
+                        $container->get('Application')
+                    );
+                },
             ],
         ];
     }
