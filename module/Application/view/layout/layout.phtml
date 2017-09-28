@@ -1,4 +1,5 @@
 <?= $this->doctype() ?>
+<?php $user = $this->identity() ?>
 
 <html lang="en">
     <head>
@@ -41,6 +42,17 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <?= $this->navigation('top_navigation')->menu()->setUlClass('nav navbar-nav')->render() ?>
+                    <div class="registration-block pull-right">
+                        <?php if ($user) : ?>
+                            <span>Hi <?= $this->escapeHtml($user->getName()) ?></span>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="/logout">Logout</a>
+                        <?php else : ?>
+                            <a href="/register">Sign Up</a>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="/login">Login</a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </nav>

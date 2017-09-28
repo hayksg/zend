@@ -66,6 +66,22 @@ $(function(){
         }
     });
 
+    /////   For register form   ///////////////////////////////////////////////
+
+    if ($(document).width() > 768) {
+        $('#form-register div.col-sm-3').addClass('text-right');
+
+        $('#form-register .app-captcha img').addClass('col-sm-6');
+        $('#form-register .app-captcha input[type="text"]').addClass('col-s-6');
+        $('.captcha-box').addClass('row');
+    } else {
+        $('#form-register .app-captcha img').css('marginBottom', '10px');
+    }
+
+    $('#form-register .app-captcha input[type="text"]').addClass('form-control')
+                                                       .attr('id', 'captcha')
+                                                       .css('width', 'auto');
+
     /////
 
 });

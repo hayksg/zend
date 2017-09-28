@@ -100,6 +100,16 @@ a:focus, a:hover {
     padding-left: 10px;
 }
 
+.registration-block {
+    margin-top: 20px;
+    color: #93c54b;
+}
+
+form ul li {
+    color: #d00;
+}
+
+
 
 
 

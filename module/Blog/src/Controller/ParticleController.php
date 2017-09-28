@@ -23,6 +23,10 @@ class ParticleController extends AbstractActionController
         $id = intval($this->getEvent()->getRouteMatch()->getParam('id', 0));
         $article = $this->articleRepository->find($id);
 
+        if (! $id || ! $article) {
+            return $this->notFoundAction();
+        }
+
         return new ViewModel([
             'article' => $article,
         ]);
