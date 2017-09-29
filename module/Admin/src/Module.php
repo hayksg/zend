@@ -20,7 +20,8 @@ class Module
             'factories' => [
                 Controller\CategoryController::class => function ($container) {
                     return new Controller\CategoryController(
-                        $container->get(EntityManager::class)
+                        $container->get(EntityManager::class),
+                        $container->get('formService')
                     );
                 },
                 Controller\ArticleController::class => function ($container) {

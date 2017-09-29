@@ -1,5 +1,16 @@
 <?php
 $headTitle = 'Add category';
 $this->headTitle($headTitle);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('admin/category', ['action' => 'add']));
+$form->prepare();
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+
+<?php
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('csrf'));
+echo $this->formRow($form->get('name'));
+echo $this->form()->closeTag();
+?>

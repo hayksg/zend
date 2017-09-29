@@ -18,6 +18,11 @@ class Module
         return [
             'factories' => [
                 'top_navigation' => Service\TopNavigation::class,
+                'formService'    => function ($container) {
+                    return new Service\FormService(
+                        $container->get(EntityManager::class)
+                    );
+                },
             ],
         ];
     }
