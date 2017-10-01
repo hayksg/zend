@@ -19,6 +19,7 @@ return [
     'Zend\Mvc\Plugin\Identity',
     'Zend\Mvc\Plugin\FlashMessenger',
     'Zend\Mvc\Plugin\FilePrg',
+    'Zend\I18n',
     'Zend\Mvc\I18n',
     'Zend\Log',
     'Zend\Cache',

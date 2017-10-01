@@ -12,5 +12,16 @@
  */
 
 return [
-    // ...
+    /*'translator' => [
+        'locale' => 'en_US',
+        'translation_file_patterns' => [
+            [
+                'type'     => 'phpArray',
+                'base_dir' => getcwd() .  '/data/lanquage',
+                //'pattern'  => 'ru.php',
+                //'pattern'  => "%s.php",
+                'pattern'  => '%s.php',
+            ],
+        ],
+    ],*/
 ];

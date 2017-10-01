@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c19a888-1748-4fa6-ae0d-40fb1947e552" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Application/src/Service/FormService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Application/src/Service/FormServiceInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/id_ID.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/gettext/id_ID.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/phpArray/en_US.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/phpArray/es_ES.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/phpArray/id_ID.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Tutorial/languages/phpArray/ru_RU.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/module/Admin/src/Controller/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Module.php" afterPath="$PROJECT_DIR$/module/Admin/src/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/autoload/global.php" afterPath="$PROJECT_DIR$/config/autoload/global.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/modules.config.php" afterPath="$PROJECT_DIR$/config/modules.config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/src/Entity/Category.php" afterPath="$PROJECT_DIR$/module/Application/src/Entity/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/src/Module.php" afterPath="$PROJECT_DIR$/module/Application/src/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/config/module.config.php" afterPath="$PROJECT_DIR$/module/Tutorial/config/module.config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/src/Module.php" afterPath="$PROJECT_DIR$/module/Tutorial/src/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php" afterPath="$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/example.phtml" afterPath="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/example.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,107 +34,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Category.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Entity/Category.php">
+      <file leaf-file-name="example.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/index/example.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-              <folding>
-                <element signature="e#38#70#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-106">
+              <caret line="80" column="23" lean-forward="false" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Service/FormService.php">
+      <file leaf-file-name="Module.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Module.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="e#39#79#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1408">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetTime.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="module.config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Authentication/config/module.config.php">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValidationService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Authentication/src/Service/ValidationService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValidationServiceInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Authentication/src/Service/ValidationServiceInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Module.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Admin/src/Module.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/CategoryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="444">
+              <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
               <folding>
-                <element signature="e#36#85#0#PHP" expanded="true" />
+                <element signature="e#28#57#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml">
+      <file leaf-file-name="ru_RU.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/phpArray/ru_RU.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="154">
+              <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormServiceInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Service/FormServiceInterface.php">
+      <file leaf-file-name="en_US.mo" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.mo">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="es_ES.mo" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.mo">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en_US.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="es_ES.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en_US.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/phpArray/en_US.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -141,6 +151,7 @@
       <find>tooltip</find>
       <find>db</find>
       <find>$db</find>
+      <find>var_dump</find>
     </findStrings>
     <replaceStrings>
       <replace>qb</replace>
@@ -153,14 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/ArticleController.php" />
-        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/article/index.phtml" />
-        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml" />
-        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php" />
-        <option value="$PROJECT_DIR$/config/autoload/doctrine.global.php" />
-        <option value="$PROJECT_DIR$/config/autoload/doctrine.local.php" />
-        <option value="$PROJECT_DIR$/module/Admin/view/partial/breadcrumb.php" />
-        <option value="$PROJECT_DIR$/module/Application/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Service/BreadcrumbService.php" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/index/index.phtml" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/category/index.phtml" />
@@ -190,20 +193,28 @@
         <option value="$PROJECT_DIR$/module/Blog/config/module.config.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/module/Authentication/src/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/config/modules.config.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/module/Application/view/layout/layout.phtml" />
         <option value="$PROJECT_DIR$/module/Authentication/view/authentication/register/index.phtml" />
         <option value="$PROJECT_DIR$/module/Authentication/view/authentication/login/index.phtml" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/js/app-script.js" />
-        <option value="$PROJECT_DIR$/module/Application/src/Entity/Category.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Module.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Module.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Service/FormService.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Service/FormServiceInterface.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Controller/CategoryController.php" />
+        <option value="$PROJECT_DIR$/module/Application/src/Entity/Category.php" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml" />
+        <option value="$PROJECT_DIR$/data/translator/ru_RU.php" />
+        <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
+        <option value="$PROJECT_DIR$/config/autoload/global.php" />
+        <option value="$PROJECT_DIR$/config/modules.config.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/src/Module.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/config/module.config.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/languages/phpArray/ru_RU.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/example.phtml" />
       </list>
     </option>
   </component>
@@ -213,14 +224,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpTemplates">
-    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="phtml" />
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="793" />
-    <option name="width" value="814" />
-    <option name="height" value="877" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -252,215 +261,91 @@
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="category" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="languages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="languages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="gettext" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="languages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="phpArray" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Helper" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="authentication" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="register" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="zend.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zend.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="index" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -469,24 +354,23 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\zend.loc\module\Application\src\Entity\Repository" />
-      <recent name="C:\wamp64\www\zend.loc\data" />
-      <recent name="C:\wamp64\www\zend.loc\module\Application\src\Entity" />
-      <recent name="C:\wamp64\www\zend.loc\module" />
-      <recent name="C:\wamp64\www\zend.loc\module\Blog\src\Controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\zend.loc\module\Blog\view\blog\article" />
       <recent name="C:\wamp64\www\zend.loc\module\Blog\view\blog\category" />
       <recent name="C:\wamp64\www\zend.loc\module\Admin\src\Service" />
       <recent name="C:\wamp64\www\zend.loc\module\Application\src\Entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\zend.loc\module\Tutorial\languages" />
+      <recent name="C:\wamp64\www\zend.loc\module\Tutorial\languages\phpArray" />
+      <recent name="C:\wamp64\www\zend.loc\module\Tutorial\src" />
+      <recent name="C:\wamp64\www\zend.loc\data\lanquage" />
+      <recent name="C:\wamp64\www\zend.loc\module\Application\src\Entity\Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -503,6 +387,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -526,18 +413,21 @@
       <workItem from="1506520684872" duration="10501000" />
       <workItem from="1506532200602" duration="154000" />
       <workItem from="1506611167680" duration="7594000" />
-      <workItem from="1506690381409" duration="3397000" />
+      <workItem from="1506690381409" duration="3913000" />
+      <workItem from="1506781143819" duration="21068000" />
+      <workItem from="1506815261041" duration="2437000" />
+      <workItem from="1506819111414" duration="1860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89197000" />
+    <option name="totallyTimeSpent" value="115078000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.180625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -563,108 +453,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/edit.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Entity/Article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="79" lean-forward="false" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/partial/breadcrumb.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/liMenuVert.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/menu-accordion.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/View/Helper/GetCategories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="40" column="56" lean-forward="false" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-          <folding>
-            <element signature="e#43#79#0#PHP" expanded="false" />
-            <marker date="1506521099687" expanded="true" signature="476:543" ph="SELECT c FRO... Application" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Entity/Repository/ArticleRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/partial/paginator.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="59" lean-forward="false" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/partial/paginatorForCategory.phtml" />
     <entry file="file://$PROJECT_DIR$/module/Application/src/View/Helper/GetRouteParams.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -672,13 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -696,31 +487,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="48" column="45" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="23" column="71" lean-forward="false" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Blog/src/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -784,17 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-858">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/modules.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#278#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -802,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,9 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1210">
           <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding>
-            <element signature="e#45#94#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="77" lean-forward="false" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,7 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="50" column="55" lean-forward="false" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,7 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2508">
           <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,17 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <element signature="e#38#70#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,15 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Authentication/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,51 +638,186 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/src/Service/FormService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#79#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/src/Module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="572">
+          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="80" column="48" lean-forward="false" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/add.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/translator/ru_RU.php" />
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/lanquage/ru.php" />
+    <entry file="file://$PROJECT_DIR$/module/Application/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/autoload/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Authentication/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Blog/src/Module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/modules.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
-            <element signature="e#36#85#0#PHP" expanded="true" />
+            <element signature="e#28#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/phpArray/en_US.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.mo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.mo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/en_US.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/gettext/es_ES.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/languages/phpArray/ru_RU.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/index/example.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <caret line="80" column="23" lean-forward="false" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1408">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -75,6 +75,13 @@ class Category
      */
     private $parent;
 
+    /**
+     * @Annotation\Type("Zend\Form\Element\Submit")
+     * @Annotation\Attributes({"class":"btn btn-default", "value":"submit"})
+     * @Annotation\AllowEmpty({"allowEmpty":true})
+     */
+    private $submit;
+
 
     /**
      * Get id
