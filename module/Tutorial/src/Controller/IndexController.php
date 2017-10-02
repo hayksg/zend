@@ -8,6 +8,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ViewModel;
 use Tutorial\Service\GreetingServiceInterface;
+use Zend\Session\Container;
 
 class IndexController extends AbstractActionController
 {
@@ -59,10 +60,14 @@ class IndexController extends AbstractActionController
 
         //$widget = $this->forward()->dispatch(\Application\Controller\IndexController::class, ['action' => 'index']);
 
+
+
         $view = new ViewModel();
         //$view->addChild($widget, 'widget');
         //$view->setTemplate('tutorial/index/exampleTemplate');
-        return $view;
+        //return $view;
+
+        //return $this->redirect()->toRoute('tutorial', ['action' => 'example']);
     }
 
     public function downloadAction()
@@ -88,5 +93,15 @@ class IndexController extends AbstractActionController
             $stream->setHeaders($headers);
             return $stream;
         }
+    }
+
+    public function translateAction()
+    {
+        $query = $this->request->getQuery('lang', 'en_US');
+
+        $container = new Container('lang');
+        $container->lang = $query;
+
+        return $this->redirect()->toRoute('tutorial', ['action' => 'example']);
     }
 }

@@ -109,6 +109,19 @@ form ul li {
     color: #d00;
 }
 
+#change-language-form select {
+    padding: 0 2px;
+    margin-bottom: 3px;
+}
+
+#change-language-form .form-control {
+    height: 30px;
+}
+
+.change-language-form {
+    margin-top: 23px;
+}
+
 
 
 

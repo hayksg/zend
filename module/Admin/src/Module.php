@@ -4,6 +4,13 @@ namespace Admin;
 
 use Doctrine\ORM\EntityManager;
 use Zend\Http\Header\Server;
+use Zend\Mvc\MvcEvent;
+
+use Zend\EventManager\EventInterface;
+use Zend\I18n\Translator\Translator;
+use Zend\Http;
+use Zend\Mvc\I18n\Translator as T;
+use Zend\Session\Container;
 
 class Module
 {
@@ -40,5 +47,26 @@ class Module
                 'admin_breadcrumbs' => Service\BreadcrumbService::class,
             ],
         ];
+    }
+
+    public function onBootstrap(MvcEvent $e)
+    {
+        $e->getApplication()->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            MvcEvent::EVENT_DISPATCH,
+            function ($e) {
+                $translator = $e->getApplication()->getServiceManager()->get('translator');
+
+                $container = new Container('language');
+                $lang = $container->language;
+
+                if (! $lang) {
+                    $lang = 'en_US';
+                }
+
+                $translator->setLocale($lang);
+            },
+            1000
+        );
     }
 }

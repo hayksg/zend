@@ -9,71 +9,8 @@ use Zend\Router\Http\Method;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
-
-
-
-
-    /*'translator' => [
-        'locale' => 'en_US',
-        'translation_file_patterns' => [
-            [
-                'base_dir' => __DIR__ . '/../languages/phpArray',
-                'type'     => 'phpArray',
-                //'pattern'  => '%s.php',
-                //'pattern'  => 'es_ES.php',
-                'pattern'  => '%s.php',
-            ],
-            [
-                'base_dir' => __DIR__ . '/../languages/gettext',
-                'type'     => 'gettext',
-                'pattern'  => "%s.mo",
-            ],
-        ],
-    ],*/
-
-
-
-
-
-
-
     'router' => [
         'routes' => [
-
-
-            'learn-zf2-i18n' => [
-                'type'    => 'Literal',
-                'options' => [
-                    'route'    => '/learn-zf2-i18n',
-                    'defaults' => [
-                        'controller'    => 'LearnZF2I18n\Controller\Index',
-                        'action'        => 'index',
-                    ],
-                ],
-                'may_terminate' => true,
-                'child_routes'  => [
-                    'default' => [
-                        'type'      => 'Segment',
-                        'options'   => [
-                            'route'         => '/:action',
-                            'constraints'   => [
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-
-
-
-
-
-
-
-
-
-
-
             'tutorial' => [
                 'type' => Segment::class,
                 'options' => [
@@ -157,11 +94,6 @@ return [
             Controller\ArticleController::class => InvokableFactory::class,
         ],
     ],
-    /*'service_manager' => [
-        'factories' => [
-            'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
-        ],
-    ],*/
     'view_manager' => [
         'template_map' => [
             'tutorial/index/index' => __DIR__ . '/../view/tutorial/index/index.phtml',
@@ -170,9 +102,7 @@ return [
             __DIR__ . '/../view',
         ],
     ],
-
-
-    'translator' => [
+    /*'translator' => [
         'locale' => 'en_US',
         'translation_file_patterns' => [
             [
@@ -186,7 +116,5 @@ return [
                 'pattern'  => '%s.mo',
             ],
         ],
-    ],
-
-
+    ],*/
 ];

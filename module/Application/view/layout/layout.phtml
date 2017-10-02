@@ -38,10 +38,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= $this->url('home') ?>">Home</a>
+                    <a class="navbar-brand" href="<?= $this->url('home') ?>"><?= $this->translate('Home') ?></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <?= $this->navigation('top_navigation')->menu()->setUlClass('nav navbar-nav')->render() ?>
+                    <?= $this->navigation('top_navigation')
+                             ->setTranslator($this->plugin('translate')->getTranslator())
+                             ->menu()
+                             ->setUlClass('nav navbar-nav')
+                             ->render() ?>
                     <div class="registration-block pull-right">
                         <?php if ($user) : ?>
                             <span>Hi <?= $this->escapeHtml($user->getName()) ?></span>

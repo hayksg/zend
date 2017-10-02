@@ -5,6 +5,9 @@ namespace Authentication;
 use Doctrine\ORM\EntityManager;
 use Zend\Authentication\AuthenticationService;
 use Application\Entity\User;
+use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Http;
+use Zend\Session\Container;
 
 class Module
 {
@@ -80,5 +83,31 @@ class Module
                 },
             ],
         ];
+    }
+
+    public function init(ModuleManagerInterface $moduleManager)
+    {
+        $moduleManager->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            function ($e) {
+                $request = $e->getRequest();
+                if (! $request instanceof Http\Request) {
+                    return;
+                }
+
+                $translator = $e->getApplication()->getServiceManager()->get('translator');
+                $container = new Container('language');
+                $lang = $container->language;
+
+                if (! $lang) {
+                    $lang = 'en_US';
+                }
+
+                $translator->setLocale($lang);
+                $e->getViewModel()->setVariable('language', $lang);
+            },
+            100
+        );
     }
 }

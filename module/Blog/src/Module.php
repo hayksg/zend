@@ -4,6 +4,7 @@ namespace Blog;
 
 use Doctrine\ORM\EntityManager;
 use Zend\Mvc\MvcEvent;
+use Zend\Session\Container;
 
 class Module
 {
@@ -35,5 +36,26 @@ class Module
                 },
             ],
         ];
+    }
+
+    public function onBootstrap(MvcEvent $e)
+    {
+        $e->getApplication()->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            MvcEvent::EVENT_DISPATCH,
+            function ($e) {
+                $translator = $e->getApplication()->getServiceManager()->get('translator');
+
+                $container = new Container('language');
+                $lang = $container->language;
+
+                if (! $lang) {
+                    $lang = 'en_US';
+                }
+
+                $translator->setLocale($lang);
+            },
+            1000
+        );
     }
 }

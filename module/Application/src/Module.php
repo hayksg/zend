@@ -3,6 +3,12 @@
 namespace Application;
 
 use Doctrine\ORM\EntityManager;
+use Zend\Mvc\MvcEvent;
+use Zend\I18n\Translator\Translator;
+use Zend\Http;
+use Zend\Mvc\I18n\Translator as T;
+use Zend\Session\Container;
+use Zend\ModuleManager\ModuleManagerInterface;
 
 class Module
 {
@@ -24,6 +30,9 @@ class Module
                     );
                 },
             ],
+            /*'aliases' => [
+                'translator' => T::class,
+            ],*/
         ];
     }
 
@@ -46,5 +55,33 @@ class Module
                 },
             ],
         ];
+    }
+
+
+
+    public function init(ModuleManagerInterface $moduleManager)
+    {
+        $moduleManager->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            function ($e) {
+                $request = $e->getRequest();
+                if (! $request instanceof Http\Request) {
+                    return;
+                }
+
+                $translator = $e->getApplication()->getServiceManager()->get('translator');
+                $container = new Container('language');
+                $lang = $container->language;
+
+                if (! $lang) {
+                    $lang = 'en_US';
+                }
+
+                $translator->setLocale($lang);
+                $e->getViewModel()->setVariable('language', $lang);
+            },
+            100
+        );
     }
 }

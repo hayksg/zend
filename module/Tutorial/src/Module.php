@@ -13,6 +13,7 @@ use Zend\EventManager\EventInterface;
 use Zend\I18n\Translator\Translator;
 use Zend\Http;
 use Zend\Mvc\I18n\Translator as T;
+use Zend\Session\Container;
 
 class Module
 {
@@ -33,9 +34,9 @@ class Module
                 'getGreeting'       => Service\GreetingServiceFactory::class,
                 'greetingAggregate' => Event\GreetingServiceListenerAggregateFactory::class,
             ],
-            'aliases' => [
+            /*'aliases' => [
                 'translator' => T::class,
-            ],
+            ],*/
         ];
     }
 
@@ -73,36 +74,25 @@ class Module
     }
 
 
-
-
-
-
-
-
-
-
-    public function onBootstrap(EventInterface $e)
+    public function onBootstrap(MvcEvent $e)
     {
-        /* @var MvcEvent $e */
-        $sharedManager = $e->getApplication()->getEventManager()->getSharedManager();
-        $sharedManager->attach(__NAMESPACE__, MvcEvent::EVENT_DISPATCH, [$this, 'initCurrentLocale'], 10);
-    }
+        $e->getApplication()->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            MvcEvent::EVENT_DISPATCH,
+            function ($e) {
+                $translator = $e->getApplication()->getServiceManager()->get('translator');
 
-    public function initCurrentLocale(MvcEvent $e)
-    {
-        $request = $e->getRequest();
-        if (! $request instanceof Http\Request) {
-            return;
-        }
+                $containerLanguage = new Container('language');
+                $lang = $containerLanguage->language;
 
-        /** @var Translator $translator */
-        $translator = $e->getApplication()->getServiceManager()->get('translator');
-        $lang = $request->getQuery('lang', 'en_US');
+                if (! $lang) {
+                    $lang = 'en_US';
+                }
 
-        $translator->setLocale($lang);
-
-        // Inject current language in view model
-        $e->getViewModel()->setVariable('lang', $lang);
+                $translator->setLocale($lang);
+            },
+            1000
+        );
     }
 
 

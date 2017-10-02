@@ -11,17 +11,27 @@
  * file.
  */
 
+use Zend\Mvc\I18n\Translator as T;
+
 return [
-    /*'translator' => [
+    'translator' => [
         'locale' => 'en_US',
         'translation_file_patterns' => [
             [
                 'type'     => 'phpArray',
-                'base_dir' => getcwd() .  '/data/lanquage',
-                //'pattern'  => 'ru.php',
-                //'pattern'  => "%s.php",
+                'base_dir' => getcwd() . '/data/languages/phpArray',
                 'pattern'  => '%s.php',
             ],
+            [
+                'type'     => 'gettext',
+                'base_dir' => getcwd() . '/data/languages/getText',
+                'pattern'  => '%s.mo',
+            ],
         ],
-    ],*/
+    ],
+    'service_manager' => [
+        'aliases' => [
+            'translator' => T::class,
+        ],
+    ],
 ];

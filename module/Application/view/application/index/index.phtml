@@ -1,12 +1,36 @@
 <?php
 $headTitle = 'Home';
 $this->headTitle($headTitle);
+
+$currentLang = $this->layout()->language;
 ?>
 <div class="row">
-    <div class="col-sm-12">
-        <h3><?= $headTitle ?></h3>
+    <div class="col-sm-6">
+        <h3><?= $this->translate($headTitle) ?></h3>
+    </div>
+    <div class="col-sm-6 change-language-form">
+        <form action="<?= $this->url('home', ['action' => 'translate']) ?>"
+              method="get"
+              id="change-language-form"
+              class="form-inline"
+        >
+            <div class="text-right">
+                <label for="languageElement"><?php echo $this->translate('Change current language') ?></label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="languageElement" class="form-control" name="language"
+                        onchange="$('#change-language-form').submit()">
+                    <option <?php echo $currentLang === 'en_US' ? 'selected' : '' ?> value="en_US">English</option>
+                    <option <?php echo $currentLang === 'id_ID' ? 'selected' : '' ?> value="id_ID">Bahasa</option>
+                    <option <?php echo $currentLang === 'es_ES' ? 'selected' : '' ?> value="es_ES">Spanish</option>
+                    <option <?php echo $currentLang === 'ru_RU' ? 'selected' : '' ?> value="ru_RU">Russian</option>
+                </select>
+            </div>
+        </form>
     </div>
 </div>
-<div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.716751650713!2d-82.11577568467739!3d39.294673731033576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8848715babcf5a71%3A0x2145adec3805e968!2sWestfield+Pl%2C+Athens%2C+OH+45701!5e0!3m2!1sru!2sus!4v1505824724704" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.716751650713!2d-82.11577568467739!3d39.294673731033576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8848715babcf5a71%3A0x2145adec3805e968!2sWestfield+Pl%2C+Athens%2C+OH+45701!5e0!3m2!1sru!2sus!4v1505824724704" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
 </div>

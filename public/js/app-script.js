@@ -82,6 +82,10 @@ $(function(){
                                                        .attr('id', 'captcha')
                                                        .css('width', 'auto');
 
-    /////
+    /////   For login form   //////////////////////////////////////////////////
+
+    $('#login-form label').eq(2).removeClass('control-label').addClass('text-right');
+
+    /////     //////////////////////////////////////////////////
 
 });
