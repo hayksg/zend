@@ -9,6 +9,7 @@ use Zend\Http;
 use Zend\Mvc\I18n\Translator as T;
 use Zend\Session\Container;
 use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Session\SessionManager;
 
 class Module
 {
@@ -83,5 +84,15 @@ class Module
             },
             100
         );
+    }
+
+    public function onBootstrap(MvcEvent $event)
+    {
+        $application = $event->getApplication();
+        $serviceManager = $application->getServiceManager();
+
+        // Следующая строка инстанцирует SessionManager и автоматически
+        // делает его выбираемым 'по умолчанию'.
+        $sessionManager = $serviceManager->get(SessionManager::class);
     }
 }

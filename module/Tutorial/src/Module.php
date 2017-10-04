@@ -14,6 +14,7 @@ use Zend\I18n\Translator\Translator;
 use Zend\Http;
 use Zend\Mvc\I18n\Translator as T;
 use Zend\Session\Container;
+use Zend\Session\SessionManager;
 
 class Module
 {
@@ -93,8 +94,15 @@ class Module
             },
             1000
         );
-    }
 
+        $application = $e->getApplication();
+        $serviceManager = $application->getServiceManager();
+
+        // Следующая строка инстанцирует SessionManager и автоматически
+        // делает его выбираемым 'по умолчанию'.
+        $sessionManager = $serviceManager->get(SessionManager::class);
+        //$sessionManager->regenerateId(true);
+    }
 
 
     /*public function init(ModuleManagerInterface $moduleManager)
