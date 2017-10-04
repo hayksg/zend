@@ -19,10 +19,15 @@ $currentLang = $this->layout()->language;
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <select id="languageElement" class="form-control" name="language"
                         onchange="$('#change-language-form').submit()">
-                    <option <?php echo $currentLang === 'en_US' ? 'selected' : '' ?> value="en_US">English</option>
-                    <option <?php echo $currentLang === 'id_ID' ? 'selected' : '' ?> value="id_ID">Bahasa</option>
-                    <option <?php echo $currentLang === 'es_ES' ? 'selected' : '' ?> value="es_ES">Spanish</option>
-                    <option <?php echo $currentLang === 'ru_RU' ? 'selected' : '' ?> value="ru_RU">Russian</option>
+                    <option <?php echo $currentLang === 'en_US' ? 'selected' : '' ?> value="en_US">
+                        <?= $this->translate('English') ?>
+                    </option>
+                    <option <?php echo $currentLang === 'es_ES' ? 'selected' : '' ?> value="es_ES">
+                        <?= $this->translate('Spanish') ?>
+                    </option>
+                    <option <?php echo $currentLang === 'ru_RU' ? 'selected' : '' ?> value="ru_RU">
+                        <?= $this->translate('Russian') ?>
+                    </option>
                 </select>
             </div>
         </form>

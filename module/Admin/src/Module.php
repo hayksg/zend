@@ -49,9 +49,24 @@ class Module
         ];
     }
 
+    public function getControllerPluginConfig()
+    {
+        return [
+            'factories' => [
+                'checkAdmin' => function ($container) {
+                    return new Controller\Plugin\CheckAdmin(
+                        $container->get(EntityManager::class)
+                    );
+                },
+            ],
+        ];
+    }
+
     public function onBootstrap(MvcEvent $e)
     {
-        $e->getApplication()->getEventManager()->getSharedManager()->attach(
+        $sharedManager = $e->getApplication()->getEventManager()->getSharedManager();
+
+        $sharedManager->attach(
             __NAMESPACE__,
             MvcEvent::EVENT_DISPATCH,
             function ($e) {
@@ -65,6 +80,17 @@ class Module
                 }
 
                 $translator->setLocale($lang);
+            },
+            100
+        );
+
+        $sharedManager->attach(
+            __NAMESPACE__,
+            MvcEvent::EVENT_DISPATCH,
+            function ($e) {
+                $controller = $e->getTarget();
+                $user = $controller->identity();
+                $controller->checkAdmin($user);
             },
             1000
         );

@@ -18,7 +18,7 @@ return [
         'locale' => 'en_US',
         'translation_file_patterns' => [
             [
-                'type'     => 'phpArray',
+                'type'     => 'phparray',
                 'base_dir' => getcwd() . '/data/languages/phpArray',
                 'pattern'  => '%s.php',
             ],

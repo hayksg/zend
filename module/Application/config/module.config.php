@@ -71,10 +71,6 @@ return [
                 'label' => 'Blog',
                 'route' => 'blog',
             ],
-            'admin' => [
-                'label' => 'Admin',
-                'route' => 'admin',
-            ],
         ],
     ],
 ];

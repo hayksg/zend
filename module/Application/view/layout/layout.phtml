@@ -46,15 +46,22 @@
                              ->menu()
                              ->setUlClass('nav navbar-nav')
                              ->render() ?>
+                    <?php if (isset($user) && $user->getRole() !== null) : ?>
+                        <?php if ($user->getRole() === 'admin' || $user->getRole() === 'superadmin') : ?>
+                        <ul class="nav navbar-nav">
+                            <li><a href="/admin"><?= $this->translate('Admin') ?></a></li>
+                        </ul>
+                        <?php endif; ?>
+                    <?php endif; ?>
                     <div class="registration-block pull-right">
                         <?php if ($user) : ?>
-                            <span>Hi <?= $this->escapeHtml($user->getName()) ?></span>
+                            <span><?= $this->translate('Hi') ?> <?= $this->escapeHtml($user->getName()) ?></span>
                             &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/logout">Logout</a>
+                            <a href="/logout"><?= $this->translate('Logout') ?></a>
                         <?php else : ?>
-                            <a href="/register">Sign Up</a>
+                            <a href="/register"><?= $this->translate('Sign Up') ?></a>
                             &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/login">Login</a>
+                            <a href="/login"><?= $this->translate('Login') ?></a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -66,7 +73,7 @@
         <footer class="footer">
             <hr>
             <div class="container">
-            <p>&copy; <?= $this->getYear() ?> by PHP-User. All rights reserved.</p>
+            <p>&copy; <?= $this->getYear() ?> by PHP-User. <?= $this->translate('All rights reserved') ?>.</p>
             </div>
         </footer>
 
