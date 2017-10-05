@@ -8,6 +8,8 @@ use Application\Entity\User;
 use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\Http;
 use Zend\Session\Container;
+use Zend\Session\SessionManager;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
@@ -109,5 +111,15 @@ class Module
             },
             100
         );
+    }
+
+    public function onBootstrap(MvcEvent $event)
+    {
+        $application = $event->getApplication();
+        $serviceManager = $application->getServiceManager();
+
+        // Следующая строка инстанцирует SessionManager и автоматически
+        // делает его выбираемым 'по умолчанию'.
+        $sessionManager = $serviceManager->get(SessionManager::class);
     }
 }

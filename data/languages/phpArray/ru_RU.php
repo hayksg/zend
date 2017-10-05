@@ -20,4 +20,7 @@ return [
     'Form for login' => 'Форма для входа в систему',
     'Form for registration' => 'Форма для регистрации',
     'Hi' => 'Привет',
+    'Categories' => 'Категории',
+    'Add category' => 'Добавить категорию',
+    'Articles' => 'Статьи',
 ];

@@ -65,13 +65,43 @@ class Category
      * @var boolean
      *
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Checkbox")
+     * @Annotation\Attributes({"class":"form-control", "id":"isPublic"})
+     * @Annotation\Options({
+     *     "label":"Is public",
+     *     "label_attributes":{"class":"control-label"},
+     *     "set_hidden_element":"true",
+     *     "checked_value":1,
+     *     "unchecked_value":0,
+     * })
+     * @Annotation\Filter({"name":"Boolean"})
+     * @Annotation\Validator({
+     *     "name":"InArray",
+     *     "options":{
+     *         "haystack":{0, 1}
+     *     },
+     * })
+     * @Annotation\AllowEmpty({"allowEmpty":"false"})
      */
-    private $isPublic;
+    private $isPublic = 0;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="parent_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Attributes({"class":"form-control", "id":"parent"})
+     * @Annotation\Options({
+     *     "label":"Parent category",
+     *     "label_attributes":{"class":"control-label"},
+     *     "id":"parent",
+     *     "empty_option":"Select category",
+     *     "target_class":"Application\Entity\Category",
+     *     "property":"name",
+     * })
+     * @Annotation\Validator({"name":"Digits"})
      */
     private $parent;
 
