@@ -23,4 +23,9 @@ return [
     'Categories' => 'Категории',
     'Add category' => 'Добавить категорию',
     'Articles' => 'Статьи',
+    'Name:' => 'Название:',
+    'Parent:' => 'Родитель:',
+    'Is public:' => 'Отображать:',
+    'Select category' => 'Выберите категорию',
+    'submit' => 'Отправить',
 ];

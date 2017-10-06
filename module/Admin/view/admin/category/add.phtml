@@ -7,13 +7,44 @@ $form->setAttribute('action', $this->url('admin/category', ['action' => 'add']))
 $form->prepare();
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<div class="row">
+    <div class="col-sm-6">
+        <?= $this->form()->openTag($form) ?>
+        <?= $this->formRow($form->get('csrf')) ?>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <?= $this->formLabel($form->get('name')) ?>
+            </div>
+            <div class="col-sm-9">
+                <?= $this->formText($form->get('name')) ?>
+                <?= $this->formElementErrors($form->get('name')) ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <?= $this->formLabel($form->get('parent')) ?>
+            </div>
+            <div class="col-sm-9">
+                <?= $this->formSelect($form->get('parent')) ?>
+                <?= $this->formElementErrors($form->get('parent')) ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <?= $this->formLabel($form->get('isPublic')) ?>
+            </div>
+            <div class="col-sm-9">
+                <?= $this->formCheckbox($form->get('isPublic')) ?>
+                <?= $this->formElementErrors($form->get('isPublic')) ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12 col-sm-offset-3">
+                <?= $this->formSubmit($form->get('submit')) ?>
+            </div>
+        </div>
+        <?= $this->form()->closeTag() ?>
+    </div>
+</div>
 
-<?php
-echo $this->form()->openTag($form);
-echo $this->formRow($form->get('csrf'));
-echo $this->formRow($form->get('name'));
-echo $this->formRow($form->get('parent'));
-echo $this->formRow($form->get('isPublic'));
-echo $this->formRow($form->get('submit'));
-echo $this->form()->closeTag();
-?>
+

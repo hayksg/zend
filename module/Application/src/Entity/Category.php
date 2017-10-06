@@ -44,7 +44,7 @@ class Category
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
      *     "label":"Name:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label asterisk"},
      *     "min":"2",
      *     "max":"255"
      * })
@@ -67,10 +67,9 @@ class Category
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      *
      * @Annotation\Type("Zend\Form\Element\Checkbox")
-     * @Annotation\Attributes({"class":"form-control", "id":"isPublic"})
+     * @Annotation\Attributes({"id":"isPublic"})
      * @Annotation\Options({
-     *     "label":"Is public",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label":"Is public:",
      *     "set_hidden_element":"true",
      *     "checked_value":1,
      *     "unchecked_value":0,
@@ -94,14 +93,16 @@ class Category
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
      * @Annotation\Attributes({"class":"form-control", "id":"parent"})
      * @Annotation\Options({
-     *     "label":"Parent category",
+     *     "label":"Parent:",
      *     "label_attributes":{"class":"control-label"},
      *     "id":"parent",
-     *     "empty_option":"Select category",
+     *     "empty_option":"Without parent category",
      *     "target_class":"Application\Entity\Category",
      *     "property":"name",
      * })
-     * @Annotation\Validator({"name":"Digits"})
+     * @Annotation\Filter({"name":"digits"})
+     * @Annotation\Filter({"name":"stringTrim"})
+     * @Annotation\Validator({"name":"digits"})
      */
     private $parent;
 
@@ -178,7 +179,7 @@ class Category
      *
      * @return Category
      */
-    public function setParent(\Application\Entity\Category $parent = null)
+    public function setParent($parent)
     {
         $this->parent = $parent;
 

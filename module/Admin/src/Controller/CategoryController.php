@@ -32,6 +32,24 @@ class CategoryController extends AbstractActionController
     {
         $category = new Category();
         $form = $this->formService->getAnnotationForm($category);
+        $form->setValidationGroup('csrf', 'name', 'parent');
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $category = $form->getData();
+
+                if ($category->getParent() == 0) {
+                    $category->setParent(null);
+                }
+
+                $this->flashMessenger()->addSuccessMessage('Category added.');
+                return $this->redirect()->toRoute('admin/category');
+            }
+        }
 
         return new ViewModel([
             'form' => $form,
