@@ -17,7 +17,19 @@ $form->prepare();
             </div>
             <div class="col-sm-9">
                 <?= $this->formText($form->get('name')) ?>
-                <?= $this->formElementErrors($form->get('name')) ?>
+                <?= $this->formElementErrors($form->get('name'), ['class' => 'form-element-errors']); ?>
+                <?php
+
+
+
+                /*$var =  $this->formElementErrors()
+                    ->setMessageOpenFormat('<div class="help-inline">')
+                    ->setMessageSeparatorString('</div><div class="help-inline">')
+                    ->setMessageCloseString('</div>')
+                    ->render($form->get('name'));
+
+                echo $this->translate($var);*/
+                ?>
             </div>
         </div>
         <div class="form-group">
@@ -35,7 +47,7 @@ $form->prepare();
             </div>
             <div class="col-sm-9">
                 <?= $this->formCheckbox($form->get('isPublic')) ?>
-                <?= $this->formElementErrors($form->get('isPublic')) ?>
+                <?= $this->translate($this->formElementErrors($form->get('isPublic'))) ?>
             </div>
         </div>
         <div class="form-group">

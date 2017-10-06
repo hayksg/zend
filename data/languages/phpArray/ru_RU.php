@@ -26,6 +26,9 @@ return [
     'Name:' => 'Название:',
     'Parent:' => 'Родитель:',
     'Is public:' => 'Отображать:',
-    'Select category' => 'Выберите категорию',
+    'Without parent category' => 'Без родительской категории',
     'submit' => 'Отправить',
+    'The input is less than %min% characters long' => 'Значение имеет длину меньше чем %min% символа',
+    'The input is more than %max% characters long' => 'Значение имеет длину больше чем %max% символа',
+    "Value is required and can't be empty" => 'Значение обязательно и не может быть пустым',
 ];

@@ -11,6 +11,7 @@ use Zend\I18n\Translator\Translator;
 use Zend\Http;
 use Zend\Mvc\I18n\Translator as T;
 use Zend\Session\Container;
+use Zend\Validator\AbstractValidator;
 
 class Module
 {
@@ -78,6 +79,8 @@ class Module
                 if (! $lang) {
                     $lang = 'en_US';
                 }
+
+                AbstractValidator::setDefaultTranslator($translator);
 
                 $translator->setLocale($lang);
             },

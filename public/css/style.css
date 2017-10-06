@@ -106,7 +106,7 @@ a:focus, a:hover {
     color: #93c54b;
 }
 
-form ul li {
+.form-element-errors {
     color: #d00;
 }
 
