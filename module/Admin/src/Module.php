@@ -29,7 +29,8 @@ class Module
                 Controller\CategoryController::class => function ($container) {
                     return new Controller\CategoryController(
                         $container->get(EntityManager::class),
-                        $container->get('formService')
+                        $container->get('formService'),
+                        $container->get('translator')
                     );
                 },
                 Controller\ArticleController::class => function ($container) {

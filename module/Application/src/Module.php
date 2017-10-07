@@ -58,7 +58,14 @@ class Module
         ];
     }
 
-
+    public function getControllerPluginConfig()
+    {
+        return [
+            'invokables' => [
+                'isObjectExists' => Controller\Plugin\IsObjectExists::class,
+            ],
+        ];
+    }
 
     public function init(ModuleManagerInterface $moduleManager)
     {

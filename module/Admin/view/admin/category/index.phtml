@@ -16,3 +16,13 @@ $this->headTitle($headTitle);
         </div>
     </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <?php if (! $this->categories) : ?>
+        <h4>List is empty</h4>
+        <?php else : ?>
+        <?php var_dump($this->categories) ?>
+        <?php endif; ?>
+    </div>
+</div>

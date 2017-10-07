@@ -13,19 +13,25 @@ class CategoryController extends AbstractActionController
     private $entityManager;
     private $categoryRepository;
     private $formService;
+    private $translator;
 
     public function __construct(
         EntityManagerInterface $entityManager,
-        FormServiceInterface $formService
+        FormServiceInterface $formService,
+        $translator
     ) {
         $this->entityManager = $entityManager;
         $this->categoryRepository = $this->entityManager->getRepository(Category::class);
         $this->formService = $formService;
+        $this->translator = $translator;
     }
 
     public function indexAction()
     {
-        return new ViewModel();
+        $categories = $this->categoryRepository->findAll();
+        return new ViewModel([
+            'categories' => $categories,
+        ]);
     }
 
     public function addAction()
@@ -37,14 +43,24 @@ class CategoryController extends AbstractActionController
         $request = $this->getRequest();
 
         if ($request->isPost()) {
+            $categoryName = $this->clearString($request->getPost('name'));
+
+            if ($this->isObjectExists($this->categoryRepository, $categoryName, ['name'])) {
+                $nameExists = sprintf($this->translator->translate('Category with name "%s" exists already'), $categoryName);
+                $form->get('name')->setMessages(['nameExists' => $nameExists]);
+            }
+
             $form->setData($request->getPost());
 
-            if ($form->isValid()) {
+            if ($form->isValid() && empty($form->getMessages())) {
                 $category = $form->getData();
 
                 if ($category->getParent() == 0) {
                     $category->setParent(null);
                 }
+
+                $this->entityManager->persist($category);
+                $this->entityManager->flush();
 
                 $this->flashMessenger()->addSuccessMessage('Category added.');
                 return $this->redirect()->toRoute('admin/category');
