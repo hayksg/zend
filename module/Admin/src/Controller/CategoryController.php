@@ -28,10 +28,15 @@ class CategoryController extends AbstractActionController
 
     public function indexAction()
     {
+        $category = new Category();
+        $form = $this->formService->getAnnotationForm($category);
+
         $categories = $this->categoryRepository->findAll();
+
         return new ViewModel([
             'categories' => $categories,
-            'cnt' => 0,
+            'cnt'        => 0,
+            'form'       => $form,
         ]);
     }
 

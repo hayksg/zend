@@ -45,6 +45,10 @@ $this->headTitle($headTitle);
                         <a href="#">Edit</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="#">Delete</a>
+                        <?php
+                        $form = $this->form;
+                        $form->setAttribute('action', $this->url());
+                        ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
