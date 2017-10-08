@@ -31,6 +31,7 @@ class CategoryController extends AbstractActionController
         $categories = $this->categoryRepository->findAll();
         return new ViewModel([
             'categories' => $categories,
+            'cnt' => 0,
         ]);
     }
 
@@ -73,6 +74,11 @@ class CategoryController extends AbstractActionController
     }
 
     public function editAction()
+    {
+        return new ViewModel();
+    }
+
+    public function deleteAction()
     {
         return new ViewModel();
     }

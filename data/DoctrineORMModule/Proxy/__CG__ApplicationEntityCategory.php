@@ -235,7 +235,7 @@ class Category extends \Application\Entity\Category implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function setParent(\Application\Entity\Category $parent = NULL)
+    public function setParent($parent)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setParent', [$parent]);

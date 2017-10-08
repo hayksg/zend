@@ -25,7 +25,8 @@ return [
                         'options' => [
                             'route'       => '/category[/:action[/:id]]',
                             'constraints' => [
-                                'action' => '[a-z]+',
+                                //'action' => '[a-z]+',
+                                'action' => '(add|edit|delete)',
                                 'id'     => '[0-9]+',
                             ],
                             'defaults' => [

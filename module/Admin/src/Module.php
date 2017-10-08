@@ -3,6 +3,7 @@
 namespace Admin;
 
 use Doctrine\ORM\EntityManager;
+use function foo\func;
 use Zend\Http\Header\Server;
 use Zend\Mvc\MvcEvent;
 
@@ -60,6 +61,20 @@ class Module
                         $container->get(EntityManager::class)
                     );
                 },
+            ],
+        ];
+    }
+
+    public function getViewHelperConfig()
+    {
+        return [
+            'factories' => [
+                'getParentCategoryName' => function ($container)
+                {
+                    return new View\Helper\GetParentCategoryName(
+                        $container->get(EntityManager::class)
+                    );
+                }
             ],
         ];
     }

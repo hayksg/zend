@@ -32,4 +32,9 @@ return [
     'The input is more than %max% characters long' => 'Значение имеет длину больше чем %max% символа',
     'Category with name "%s" exists already' => 'Категория под названием "%s" уже существует',
     "Value is required and can't be empty" => 'Значение обязательно и не может быть пустым',
+    "Categories list" => 'Список категорий',
+    "Add category" => 'Добавить категорию',
+    "Actions" => 'Управление',
+    "Category name" => 'Название категории',
+    "Parent category" => 'Родительская категория',
 ];

@@ -5,7 +5,11 @@ $this->headTitle($headTitle);
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div class="row">
     <div class="col-sm-6">
-        <div><a href="<?= $this->url('admin/category', ['action' => 'add']) ?>" class="btn btn-default">Add category</a></div>
+        <div>
+            <a href="<?= $this->url('admin/category', ['action' => 'add']) ?>" class="btn btn-default">
+                <?= $this->translate('Add category') ?>
+            </a>
+        </div>
     </div>
     <div class="col-sm-6">
         <div class="pull-right app-message">
@@ -22,7 +26,30 @@ $this->headTitle($headTitle);
         <?php if (! $this->categories) : ?>
         <h4>List is empty</h4>
         <?php else : ?>
-        <?php var_dump($this->categories) ?>
+        <h4><?= $this->translate('Categories list') ?></h4>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>#</th>
+                    <th><?= $this->translate('Category name') ?></th>
+                    <th><?= $this->translate('Parent category') ?></th>
+                    <th><?= $this->translate('Actions') ?></th>
+                </tr>
+                <?php foreach ($this->categories as $category) : ?>
+                <tr>
+                    <td><?= ++$this->cnt ?></td>
+                    <td><?= $this->escapehtml($category->getName()) ?></td>
+                    <td><?= $this->getParentCategoryName($category) ?></td>
+                    <td>
+                        <a href="#">Edit</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#">Delete</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
         <?php endif; ?>
     </div>
 </div>
