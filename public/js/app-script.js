@@ -86,6 +86,13 @@ $(function(){
 
     $('#login-form label').eq(2).removeClass('control-label').addClass('text-right');
 
-    /////     //////////////////////////////////////////////////
+    /////   For confirm plugin   //////////////////////////////////////////////
+
+    $('.confirm-plugin').jConfirmAction({
+        question: 'Are you sure?',
+        noText: 'Cancel'
+    });
+
+    /////   For confirm plugin   //////////////////////////////////////////////
 
 });
