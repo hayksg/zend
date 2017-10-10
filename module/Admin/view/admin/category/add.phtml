@@ -18,18 +18,6 @@ $form->prepare();
             <div class="col-sm-9">
                 <?= $this->formText($form->get('name')) ?>
                 <?= $this->formElementErrors($form->get('name'), ['class' => 'form-element-errors']); ?>
-                <?php
-
-
-
-                /*$var =  $this->formElementErrors()
-                    ->setMessageOpenFormat('<div class="help-inline">')
-                    ->setMessageSeparatorString('</div><div class="help-inline">')
-                    ->setMessageCloseString('</div>')
-                    ->render($form->get('name'));
-
-                echo $this->translate($var);*/
-                ?>
             </div>
         </div>
         <div class="form-group">

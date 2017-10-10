@@ -18,11 +18,15 @@ class FormService implements FormServiceInterface
 
     public function getAnnotationForm($formObj)
     {
-        $builder = new AnnotationBuilder($this->entityManager);
-        $form = $builder->createForm($formObj);
-        $form->setHydrator(new DoctrineObject($this->entityManager));
-        $form->bind($formObj);
+        if (is_object($formObj)) {
+            $builder = new AnnotationBuilder($this->entityManager);
+            $form = $builder->createForm($formObj);
+            $form->setHydrator(new DoctrineObject($this->entityManager));
+            $form->bind($formObj);
 
-        return $form ?: false;
+            return $form ?: false;
+        }
+
+        return false;
     }
 }
