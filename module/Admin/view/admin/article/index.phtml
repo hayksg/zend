@@ -3,26 +3,31 @@ $headTitle = 'Articles';
 $this->headTitle($headTitle);
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
-<div><a href="<?= $this->url('admin/article', ['action' => 'add']) ?>" class="btn btn-default">Add article</a></div>
+<div>
+    <a href="<?= $this->url('admin/article', ['action' => 'add']) ?>" class="btn btn-default">
+        <?= $this->translate('Add article') ?>
+    </a>
+</div>
 <br>
 <div class="row">
     <div class="col-sm-12">
         <?php if (! $this->articles) : ?>
         <h4>List is empty</h4>
         <?php else : ?>
-        <h4>Articles list</h4>
+        <h4><?= $this->translate('Articles list') ?></h4>
+        <br>
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <tr>
                     <th>#</th>
                     <th>Id</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Short content</th>
-                    <th>Content</th>
-                    <th>Image</th>
-                    <th>Is public</th>
-                    <th>Actions</th>
+                    <th><?= $this->translate('Title') ?></th>
+                    <th><?= $this->translate('Category') ?></th>
+                    <th><?= $this->translate('Description') ?></th>
+                    <th><?= $this->translate('Content') ?></th>
+                    <th><?= $this->translate('Image') ?></th>
+                    <th><?= $this->translate('Is visible') ?></th>
+                    <th><?= $this->translate('Actions') ?></th>
                 </tr>
                 <?php foreach ($this->articles as $article) : ?>
                 <tr>
@@ -41,9 +46,26 @@ $this->headTitle($headTitle);
                     </td>
                     <td><?= $this->escapeHtml($article->getIsPublic()) ?></td>
                     <td>
-                        <a href="#">Edit</a>
+                        <a href="<?= $this->url('admin/article', ['action' => 'edit', 'id' => (int)$article->getId()]) ?>">
+                            <?= $this->translate('Edit') ?>
+                        </a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Delete</a>
+                        <?php
+                        $form = $this->form;
+                        $form->setAttributes([
+                            'action' => $this->url('admin/article', ['action' => 'delete', 'id' => (int)$article->getId()]),
+                            'class'  => 'form-delete confirm-plugin',
+                        ]);
+                        $form->prepare();
+
+                        echo $this->form()->openTag($form);
+                        echo $this->formHidden($form->get('csrf'));
+                        echo $this->formSubmit($form->get('submit')
+                                                    ->setValue($this->translate('Delete'))
+                                                    ->removeAttribute('class', 'btn btn-default')
+                                                    ->setAttribute('name', 'send'));
+                        echo $this->form()->closeTag();
+                        ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

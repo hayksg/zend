@@ -4,10 +4,10 @@ $this->headTitle($headTitle);
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div>
-    <p>You have following capabilities:</p>
+    <p><?= $this->translate('You have following capabilities') ?>:</p>
     <ul class="list-unstyled">
-        <li><a href="<?= $this->url('admin/category') ?>">Manage categories</a></li>
-        <li><a href="<?= $this->url('admin/article') ?>">Manage articles</a></li>
-        <li><a href="#">Manage users</a></li>
+        <li><a href="<?= $this->url('admin/category') ?>"><?= $this->translate('Manage categories') ?></a></li>
+        <li><a href="<?= $this->url('admin/article') ?>"><?= $this->translate('Manage articles') ?></a></li>
+        <li><a href="#"><?= $this->translate('Manage users') ?></a></li>
     </ul>
 </div>

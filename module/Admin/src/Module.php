@@ -36,7 +36,9 @@ class Module
                 },
                 Controller\ArticleController::class => function ($container) {
                     return new Controller\ArticleController(
-                        $container->get(EntityManager::class)
+                        $container->get(EntityManager::class),
+                        $container->get('formService'),
+                        $container->get('translator')
                     );
                 },
             ],
