@@ -1,5 +1,20 @@
 <?php
 $headTitle = 'Add article';
 $this->headTitle($headTitle);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('admin/article', ['action' => 'add']));
+$form->prepare();
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<br>
+<br>
+<br>
+<?php
+    echo $this->form()->openTag($form);
+    echo $this->formRow($form->get('csrf'));
+    echo $this->formRow($form->get('title'));
+    echo $this->formRow($form->get('shortContent'));
+    echo $this->formRow($form->get('submit'));
+    echo $this->form()->closeTag();
+?>

@@ -64,7 +64,31 @@ class ArticleController extends AbstractActionController
 
     public function addAction()
     {
-        return new ViewModel();
+        $article = new Article();
+        $form = $this->formService->getAnnotationForm($article);
+        $form->setValidationGroup('csrf', 'title', 'shortContent');
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $article = $form->getData();
+
+                var_dump($article);exit;
+
+
+                //$this->entityManager->persist($article);
+                //$this->entityManager->flush();
+
+                $this->flashMessenger()->addSuccessMessage('Article added');
+                return $this->redirect()->toRoute('admin/article');
+            }
+        }
+
+        return new ViewModel([
+            'form' => $form,
+        ]);
     }
 
     public function editAction()

@@ -3,12 +3,16 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Zend\Form\Annotation;
 
 /**
  * Article
  *
  * @ORM\Table(name="article", indexes={@ORM\Index(name="category_id_index", columns={"category_id"})})
  * @ORM\Entity(repositoryClass="Application\Entity\Repository\ArticleRepository")
+ *
+ * @Annotation\Name("article")
+ * @Annotation\Attributes({"class":"form-horizontal"})
  */
 class Article
 {
@@ -18,13 +22,42 @@ class Article
      * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     *
+     * @Annotation\Exclude()
      */
     private $id;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Csrf")
+     * @Annotation\Name("csrf")
+     * @Annotation\Options({"csrf_options":{"timeout":"600"}})
+     */
+    private $csrf;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Text")
+     * @Annotation\Attributes({"class":"form-control", "id":"title", "required":"required"})
+     * @Annotation\Required({"required":"true"})
+     * @Annotation\Options({
+     *     "label":"Title:",
+     *     "label_attributes":{"class":"control-label"},
+     *     "min":2,
+     *     "max":255,
+     * })
+     * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Validator({
+     *     "name":"StringLength",
+     *     "options":{
+     *         "encoding":"utf-8",
+     *         "min":2,
+     *         "max":255,
+     *     },
+     * })
      */
     private $title;
 
@@ -32,6 +65,23 @@ class Article
      * @var string
      *
      * @ORM\Column(name="short_content", type="text", length=65535, precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Textarea")
+     * @Annotation\Attributes({"class":"form-control", "id":"shortContent"})
+     * @Annotation\Options({
+     *     "label":"Short content:",
+     *     "label_attributes":{"class":"control-label"},
+     *     "min":2,
+     * })
+     * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Validator({
+     *     "name":"StringLength",
+     *     "options":{
+     *         "encoding":"utf-8",
+     *         "min":2,
+     *     },
+     * })
      */
     private $shortContent;
 
@@ -65,6 +115,13 @@ class Article
      * })
      */
     private $category;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Submit")
+     * @Annotation\Attributes({"class":"btn btn-default", "value":"submit"})
+     * @Annotation\AllowEmpty({"allowEmpty":"true"})
+     */
+    private $submit;
 
 
     /**
