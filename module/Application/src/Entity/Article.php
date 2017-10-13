@@ -71,7 +71,6 @@ class Article
      * @Annotation\Options({
      *     "label":"Short content:",
      *     "label_attributes":{"class":"control-label"},
-     *     "min":2,
      * })
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"StringTrim"})
@@ -79,7 +78,6 @@ class Article
      *     "name":"StringLength",
      *     "options":{
      *         "encoding":"utf-8",
-     *         "min":2,
      *     },
      * })
      */
@@ -89,6 +87,21 @@ class Article
      * @var string
      *
      * @ORM\Column(name="content", type="text", length=65535, precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Textarea")
+     * @Annotation\Attributes({"class":"form-control", "id":"content", "required":"required"})
+     * @Annotation\Required({"required":true})
+     * @Annotation\Options({
+     *     "label":"Content:",
+     *     "label_attributes":{"class":"control-label"},
+     * })
+     * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Filter({"name":"HtmlEntities"})
+     * @Annotation\Validator({
+     *     "name":"StringLength",
+     *     "options":{"encoding":"utf-8"},
+     * })
      */
     private $content;
 
@@ -96,6 +109,25 @@ class Article
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Name("file")
+     * @Annotation\Type("Zend\Form\Element\File")
+     * @Annotation\Attributes({"id":"file"})
+     * @Annotation\Options({
+     *     "label":"Upload image:",
+     *     "label_attributes":{"class":"control-label"},
+     * })
+     * @Annotation\Validator({
+     *     "name":"Zend\Validator\File\Extension",
+     *     "options":{"extension":{"png", "jpg", "jpeg", "gif"}},
+     * })
+     * @Annotation\Validator({"name":"Zend\Validator\File\IsImage"})
+     * @Annotation\Validator({
+     *     "name":"Zend\Validator\File\Size",
+     *     "options":{"max":"20"},
+     * })
+     * @Annotation\Input("Zend\InputFilter\FileInput")
+     * @Annotation\AllowEmpty({"allowEmpty":"true"})
      */
     private $image;
 

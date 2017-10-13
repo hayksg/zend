@@ -15,6 +15,8 @@ $form->prepare();
     echo $this->formRow($form->get('csrf'));
     echo $this->formRow($form->get('title'));
     echo $this->formRow($form->get('shortContent'));
+    echo $this->formRow($form->get('content'));
+    echo $this->formRow($form->get('file'));
     echo $this->formRow($form->get('submit'));
     echo $this->form()->closeTag();
 ?>

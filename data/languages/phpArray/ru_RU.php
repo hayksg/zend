@@ -55,4 +55,9 @@ return [
     "Manage categories" => 'Управление категориями',
     "Manage articles" => 'Управление статьями',
     "Manage users" => 'Управление пользователями',
+    "File has an incorrect extension" => 'Файл имеет некорректное расширение',
+    "File is no image, '%type%' detected" => "Файл не картинка, '%type%' получен",
+    "Maximum allowed size for file is '%max%' but '%size%' detected" => "Максимально разрешённый размер для файла '%max%', получено '%size%'",
+    "Minimum expected size for file is '%min%' but '%size%' detected" => "Минимально разрешённый размер для файла '%min%', получено '%size%'",
+
 ];

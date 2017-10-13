@@ -66,11 +66,16 @@ class ArticleController extends AbstractActionController
     {
         $article = new Article();
         $form = $this->formService->getAnnotationForm($article);
-        $form->setValidationGroup('csrf', 'title', 'shortContent');
+        $form->setValidationGroup('csrf', 'title', 'shortContent', 'content', 'file');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $form->setData($request->getPost());
+            $files = $this->request->getFiles()->toArray();
+            if ($files) { $fileName = $files['file']['name']; }
+
+            $data = array_merge_recursive($request->getPost()->toArray(), $files);
+
+            $form->setData($data);
 
             if ($form->isValid()) {
                 $article = $form->getData();
