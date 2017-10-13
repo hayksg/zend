@@ -27,7 +27,8 @@
         "zendframework/zend-form": "^2.10",
         "zendframework/zend-captcha": "^2.7",
         "zendframework/zend-mvc-plugin-identity": "^1.0",
-        "zendframework/zend-i18n": "^2.7"
+        "zendframework/zend-i18n": "^2.7",
+        "zendframework/zend-crypt": "^3.2"
     },
     "autoload": {
         "psr-4": {

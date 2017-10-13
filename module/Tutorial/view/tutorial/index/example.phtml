@@ -49,7 +49,7 @@ if ($floatValidator->isValid($value)) {
 ?>
 
 <?php
-use Zend\I18n\Translator\Translator;
+/*use Zend\I18n\Translator\Translator;
 $translator = new Translator();
 
 $type = 'phparray';
@@ -60,7 +60,30 @@ $path = getcwd() . '/data/translator/' . $file;
 if (is_file($path)) {
     $translator->addTranslationFile($type, $path);
     echo $translator->translate('home');
+}*/
+?>
+
+<?php
+
+
+use Zend\Crypt\Password\Bcrypt;
+
+$bcrypt = new Bcrypt();
+$securePass = $bcrypt->create('user password');
+
+//echo $securePass;
+
+$bcrypt = new Bcrypt();
+//$securePass = 'the stored bcrypt value';
+$password = 'user password1';
+
+if ($bcrypt->verify($password, $securePass)) {
+    echo "The password is correct! \n";
+} else {
+    echo "The password is NOT correct.\n";
 }
+
+
 ?>
 
 <?php
