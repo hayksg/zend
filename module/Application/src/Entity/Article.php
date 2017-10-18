@@ -43,8 +43,8 @@ class Article
      * @Annotation\Attributes({"class":"form-control", "id":"title", "required":"required"})
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
-     *     "label":"Title:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label":"Title",
+     *     "label_attributes":{"class":"control-label col-sm-3 asterisk"},
      *     "min":2,
      *     "max":255,
      * })
@@ -69,8 +69,8 @@ class Article
      * @Annotation\Type("Zend\Form\Element\Textarea")
      * @Annotation\Attributes({"class":"form-control", "id":"shortContent"})
      * @Annotation\Options({
-     *     "label":"Short content:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label":"Short content",
+     *     "label_attributes":{"class":"control-label col-sm-3"},
      * })
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"StringTrim"})
@@ -92,8 +92,8 @@ class Article
      * @Annotation\Attributes({"class":"form-control", "id":"content", "required":"required"})
      * @Annotation\Required({"required":true})
      * @Annotation\Options({
-     *     "label":"Content:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label":"Content",
+     *     "label_attributes":{"class":"control-label col-sm-3 asterisk"},
      * })
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"StringTrim"})
@@ -114,8 +114,8 @@ class Article
      * @Annotation\Type("Zend\Form\Element\File")
      * @Annotation\Attributes({"id":"file"})
      * @Annotation\Options({
-     *     "label":"Upload image:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label":"Upload image",
+     *     "label_attributes":{"class":"control-label col-sm-3"},
      * })
      * @Annotation\Validator({
      *     "name":"Zend\Validator\File\Extension",
@@ -135,6 +135,18 @@ class Article
      * @var boolean
      *
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Checkbox")
+     * @Annotation\Attributes({"class":"form-control", "id":"isPublic"})
+     * @Annotation\Options({
+     *     "label":"Is Public",
+     *     "label_attributes":{"class":"control-label col-sm-3"},
+     *     "set_hidden_element":true,
+     *     "checked_value":1,
+     *     "unchecked_value":0,
+     * })
+     * @Annotation\Filter({"name":"Boolean"})
+     * @Annotation\AllowEmpty({"allowEmpty":false})
      */
     private $isPublic;
 
@@ -145,6 +157,19 @@ class Article
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true)
      * })
+     *
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Attributes({"class":"form-control", "id":"category", "required":"required"})
+     * @Annotation\Required({"required":true})
+     * @Annotation\Options({
+     *     "label":"Category",
+     *     "label_attributes":{"class":"control-label col-sm-3 asterisk"},
+     *     "empty_option":"Without parent category",
+     *     "target_class":"Application\Entity\Category",
+     *     "property":"name",
+     * })
+     * @Annotation\Validator({"name":"Digits"})
+     * @Annotation\Filter({"name":"Digits"})
      */
     private $category;
 
