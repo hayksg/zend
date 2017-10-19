@@ -44,7 +44,9 @@ $this->headTitle($headTitle);
                              height="40"
                         >
                     </td>
-                    <td><?= $this->escapeHtml($article->getIsPublic()) ?></td>
+                    <td>
+                        <?= $this->escapeHtml($article->getIsPublic()) ? $this->translate('Yes') : $this->translate('No'); ?>
+                    </td>
                     <td>
                         <a href="<?= $this->url('admin/article', ['action' => 'edit', 'id' => (int)$article->getId()]) ?>">
                             <?= $this->translate('Edit') ?>

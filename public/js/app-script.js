@@ -93,6 +93,10 @@ $(function(){
         noText: 'Cancel'
     });
 
-    /////   For confirm plugin   //////////////////////////////////////////////
+    /////   For input type file   /////////////////////////////////////////////
+
+    $(":file").jfilestyle({inputSize: "350px"});
+
+    /////
 
 });

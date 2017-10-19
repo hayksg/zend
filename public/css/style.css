@@ -154,6 +154,10 @@ form.form-delete input[type="submit"]:hover {
     color: #79a736;
 }
 
+form ul li {
+    color: #d00;
+}
+
 
 
 

@@ -112,7 +112,7 @@ class Article
      *
      * @Annotation\Name("file")
      * @Annotation\Type("Zend\Form\Element\File")
-     * @Annotation\Attributes({"id":"file"})
+     * @Annotation\Attributes({"class":"form-control jfilestyle ", "id":"file"})
      * @Annotation\Options({
      *     "label":"Upload image",
      *     "label_attributes":{"class":"control-label col-sm-3"},
@@ -124,7 +124,7 @@ class Article
      * @Annotation\Validator({"name":"Zend\Validator\File\IsImage"})
      * @Annotation\Validator({
      *     "name":"Zend\Validator\File\Size",
-     *     "options":{"max":"20"},
+     *     "options":{"max":"20000000"},
      * })
      * @Annotation\Input("Zend\InputFilter\FileInput")
      * @Annotation\AllowEmpty({"allowEmpty":"true"})
@@ -137,10 +137,10 @@ class Article
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=false, unique=false)
      *
      * @Annotation\Type("Zend\Form\Element\Checkbox")
-     * @Annotation\Attributes({"class":"form-control", "id":"isPublic"})
+     * @Annotation\Attributes({"id":"isPublic"})
      * @Annotation\Options({
      *     "label":"Is Public",
-     *     "label_attributes":{"class":"control-label col-sm-3"},
+     *     "label_attributes":{"class":"text-right col-sm-3"},
      *     "set_hidden_element":true,
      *     "checked_value":1,
      *     "unchecked_value":0,

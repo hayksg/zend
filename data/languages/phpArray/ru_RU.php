@@ -38,6 +38,7 @@ return [
     "Category name" => 'Название категории',
     "Parent category" => 'Родительская категория',
     "Is visible" => 'Отображать',
+    "Is Public" => 'Отображать',
     "Yes" => 'Да',
     "No" => 'Нет',
     "Edit" => 'Обновить',
@@ -59,5 +60,9 @@ return [
     "File is no image, '%type%' detected" => "Файл не картинка, '%type%' получен",
     "Maximum allowed size for file is '%max%' but '%size%' detected" => "Максимально разрешённый размер для файла '%max%', получено '%size%'",
     "Minimum expected size for file is '%min%' but '%size%' detected" => "Минимально разрешённый размер для файла '%min%', получено '%size%'",
-
+    "Choose file" => "Выберите файл",
+    "file" => "Выберите файл",
+    "Upload image" => "Загрузить файл",
+    "Short content" => "Описание",
+    "Short content" => "Описание",
 ];
