@@ -127,7 +127,7 @@ class ArticleController extends AbstractActionController
             $newTitle = $this->clearString($form->get('title')->getValue());
 
             if ($this->articleRepository->findOneBy(['title' => $newTitle]) && $newTitle !== $oldTitle) {
-                $message = "Article with title {$newTitle} exists already";
+                $message = sprintf($this->translator->translate('Article with name "%s" exists already'), $newTitle);
                 $form->get('title')->setMessages(['titleExists' => $message]);
             }
 

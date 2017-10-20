@@ -31,6 +31,7 @@ return [
     'The input is less than %min% characters long' => 'Значение имеет длину меньше чем %min% символа',
     'The input is more than %max% characters long' => 'Значение имеет длину больше чем %max% символа',
     'Category with name "%s" exists already' => 'Категория под названием "%s" уже существует',
+    'Article with name "%s" exists already' => 'Статья под названием "%s" уже существует',
     "Value is required and can't be empty" => 'Значение обязательно и не может быть пустым',
     "Categories list" => 'Список категорий',
     "Add category" => 'Добавить категорию',
