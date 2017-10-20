@@ -78,6 +78,9 @@ class Module
                     );
                 }
             ],
+            'invokables' => [
+                'getTooltip' => View\Helper\GetTooltip::class,
+            ],
         ];
     }
 

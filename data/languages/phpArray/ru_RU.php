@@ -65,4 +65,5 @@ return [
     "Upload image" => "Загрузить файл",
     "Short content" => "Описание",
     "Short content" => "Описание",
+    "by" => "от",
 ];

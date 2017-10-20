@@ -97,6 +97,12 @@ $(function(){
 
     $(":file").jfilestyle({inputSize: "350px"});
 
-    /////
+    /////   Tooltip   /////////////////////////////////////////////////////////
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+
+    /////   ///
 
 });

@@ -1,5 +1,75 @@
 <?php
 $headTitle = 'Edit article';
 $this->headTitle($headTitle);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('admin/article', ['action' => 'edit', 'id' => $this->id]));
+$form->prepare();
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <?= $this->form()->openTag($form) ?>
+        <?php
+        foreach ($form as $element) {
+            $label = '';
+            $formElement = '';
+            $attributes = $element->getAttributes();
+
+            if ($element->getLabel()) {
+                $label = $element->setLabel($this->translate($element->getLabel()) . ' :');
+                $label = $this->formLabel($element);
+            }
+
+            if (isset($attributes['type'])) {
+                switch ($attributes['type']) {
+                    case 'hidden':
+                        $formElement .= $this->formHidden($element);
+                        $formElement .= $this->formElementErrors($element);
+                        break;
+                    case 'text':
+                        $formElement .= '<div class="col-sm-9">';
+                        $formElement .= $this->formText($element);
+                        $formElement .= $this->translate($this->formElementErrors($element));
+                        $formElement .= '</div>';
+                        break;
+                    case 'textarea':
+                        $formElement .= '<div class="col-sm-9">';
+                        $formElement .= $this->formTextarea($element);
+                        $formElement .= $this->formElementErrors($element);
+                        $formElement .= '</div>';
+                        break;
+                    case 'file':
+                        $formElement .= '<div class="col-sm-9">';
+                        $formElement .= $this->formFile($element);
+                        $formElement .= $this->formElementErrors($element);
+                        $formElement .= '<p><img src="'. $this->article->getImage() . '" width="170" height="90" alt="image"></p>';
+                        $formElement .= '</div>';
+                        break;
+                    case 'select':
+                        $formElement .= '<div class="col-sm-9">';
+                        $formElement .= $this->formSelect($element);
+                        $formElement .= $this->formElementErrors($element);
+                        $formElement .= '</div>';
+                        break;
+                    case 'checkbox':
+                        $formElement .= '<div class="col-sm-9">';
+                        $formElement .= $this->formCheckbox($element);
+                        $formElement .= $this->formElementErrors($element);
+                        $formElement .= '</div>';
+                        break;
+                    case 'submit':
+                        $formElement .= '<br><div class="col-sm-12 col-sm-offset-3">';
+                        $formElement .= $this->formSubmit($element);
+                        $formElement .= '</div>';
+                        break;
+                }
+            }
+
+            echo "<div class='form-group'>" . $label . $formElement . "</div>";
+        }
+        ?>
+        <?= $this->form()->closeTag() ?>
+    </div>
+</div>

@@ -46,7 +46,7 @@ class ArticleController extends AbstractActionController
             $currentPageNumber = intval($this->params()->fromRoute('page', 0));
             $paginator->setCurrentPageNumber($currentPageNumber);
 
-            $itemCountPerPage = 2;
+            $itemCountPerPage = 10;
             $paginator->setItemCountPerPage($itemCountPerPage);
 
             if ($currentPageNumber && $itemCountPerPage) {
@@ -76,9 +76,8 @@ class ArticleController extends AbstractActionController
         $request = $this->getRequest();
         if ($request->isPost()) {
             $files = $this->request->getFiles()->toArray();
-            if ($files) { $fileName = $this->clearString($files['file']['name']); }
-
-            $data = array_merge_recursive($request->getPost()->toArray(), $files);
+            $post  = $request->getPost()->toArray();
+            $data  = array_merge_recursive($post, $files);
 
             $form->setData($data);
 
@@ -86,16 +85,7 @@ class ArticleController extends AbstractActionController
                 $article = $form->getData();
                 $fileDir = './public/img/blog/';
 
-                if ($fileName && is_dir($fileDir)) {
-                    /* block for images unique name in filesystem and database */
-                    $uniqueId = uniqid();
-
-                    $filter = new \Zend\Filter\File\Rename($fileDir . $uniqueId . $fileName);
-                    $filter->filter($files['file']);
-
-                    if ($fileName) $article->setImage('/img/blog/' . $uniqueId . $fileName);
-                    /* end block */
-                }
+                $this->setImage($files, $fileDir, $article);
 
                 $this->entityManager->persist($article);
                 $this->entityManager->flush();
@@ -112,7 +102,54 @@ class ArticleController extends AbstractActionController
 
     public function editAction()
     {
-        return new ViewModel();
+        $id = (int)$this->params()->fromRoute('id', 0);
+        $article = $this->articleRepository->find($id);
+
+        if (! $article) {
+            return $this->notFoundAction();
+        }
+
+        $form = $this->formService->getAnnotationForm($article);
+
+        if(! $this->getCategoryWhichHasNotParentCategory($form)) {
+            return false;
+        }
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $files = $request->getFiles()->toArray();
+            $post = $request->getPost()->toArray();
+            $data = array_merge_recursive($post, $files);
+
+            $form->setData($data);
+
+            $oldTitle = $this->clearString($article->getTitle());
+            $newTitle = $this->clearString($form->get('title')->getValue());
+
+            if ($this->articleRepository->findOneBy(['title' => $newTitle]) && $newTitle !== $oldTitle) {
+                $message = "Article with title {$newTitle} exists already";
+                $form->get('title')->setMessages(['titleExists' => $message]);
+            }
+
+            if ($form->isValid() && empty($form->getMessages())) {
+                $article = $form->getData();
+                $fileDir = './public/img/blog/';
+
+                $this->setImage($files, $fileDir, $article);
+
+                $this->entityManager->persist($article);
+                $this->entityManager->flush();
+
+                $this->flashMessenger()->addSuccessMessage('Article edited');
+                return $this->redirect()->toRoute('admin/article');
+            }
+        }
+
+        return new ViewModel([
+            'id'      => $id,
+            'form'    => $form,
+            'article' => $article,
+        ]);
     }
 
     public function deleteAction()
@@ -146,5 +183,30 @@ class ArticleController extends AbstractActionController
 
         $categories = $form->get('category')->getValueOptions();
         return $categories ?: false;
+    }
+
+    private function deleteImage($article)
+    {
+        $image = $article->getImage();
+        if (is_file(getcwd() . '/public' . $image)) {
+            unlink(getcwd() . '/public' . $image);
+            return true;
+        }
+    }
+
+    private function setImage($files, $fileDir, $article)
+    {
+        if ($files) { $fileName = $this->clearString($files['file']['name']); }
+
+        if ($fileName && is_dir($fileDir)) {
+            /* block for images unique name in filesystem and database */
+            $uniqueId = uniqid();
+
+            $filter = new \Zend\Filter\File\Rename($fileDir . $uniqueId . $fileName);
+            $filter->filter($files['file']);
+
+            $article->setImage('/img/blog/' . $uniqueId . $fileName);
+            /* end block */
+        }
     }
 }

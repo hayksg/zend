@@ -30,7 +30,7 @@ $this->headTitle($headTitle);
                                  class="img-responsive blog-image"
                                  alt="<?= $this->escapeHtml($article->getTitle()) . '- image' ?>"
                             >
-                            <div><?= $this->escapeHtml($article->getShortContent()) ?></div>
+                            <div><?= nl2br($this->escapeHtml($article->getShortContent()), false) ?></div>
                         </div>
                         <div class="panel-footer">
                             <div>

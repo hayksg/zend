@@ -35,8 +35,8 @@ $this->headTitle($headTitle);
                     <td><?= (int)$article->getId() ?></td>
                     <td><?= $this->escapeHtml($article->getTitle()) ?></td>
                     <td><?= $this->escapeHtml($article->getCategory()->getName()) ?></td>
-                    <td><?= $this->escapeHtml($article->getShortContent()) ?></td>
-                    <td><?= $this->escapeHtml($article->getContent()) ?></td>
+                    <td><?= $this->getTooltip($this->escapeHtml($article->getShortContent())) ?></td>
+                    <td><?= $this->getTooltip($this->escapeHtml($article->getContent())) ?></td>
                     <td>
                         <img src="<?= $this->basePath() ?><?= $this->escapeHtml($article->getImage()) ?>"
                              class="img-responsive"
