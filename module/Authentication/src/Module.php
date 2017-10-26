@@ -87,6 +87,15 @@ class Module
         ];
     }
 
+    public function getControllerPluginConfig()
+    {
+        return [
+            'invokables' => [
+                'cryptData' => Controller\Plugin\CryptData::class,
+            ],
+        ];
+    }
+
     public function init(ModuleManagerInterface $moduleManager)
     {
         $moduleManager->getEventManager()->getSharedManager()->attach(

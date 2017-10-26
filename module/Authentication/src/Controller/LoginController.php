@@ -50,6 +50,7 @@ class LoginController extends AbstractActionController
 
             if ($form->isValid()) {
                 $user = $form->getData();
+
                 $authResult = $this->entityManager->getRepository(User::class)->login($user, $this->ormAuthService);
 
                 if ($authResult->getCode() != \Zend\Authentication\Result::SUCCESS) {

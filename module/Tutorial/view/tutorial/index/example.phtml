@@ -68,7 +68,7 @@ if (is_file($path)) {
 
 use Zend\Crypt\Password\Bcrypt;
 
-$bcrypt = new Bcrypt();
+/*$bcrypt = new Bcrypt();
 $securePass = $bcrypt->create('user password');
 
 //echo $securePass;
@@ -81,10 +81,45 @@ if ($bcrypt->verify($password, $securePass)) {
     echo "The password is correct! \n";
 } else {
     echo "The password is NOT correct.\n";
-}
+}*/
 
 
 ?>
+
+
+<?php
+
+
+
+use Zend\Crypt\BlockCipher;
+
+$cipher = BlockCipher::factory('mcrypt', array('algorithm' => 'blowfish'));
+$cipher->setKey('this is the encryption key');
+$text      = 'This is the message to encrypt';
+$encrypted = $cipher->encrypt($text);
+
+printf("Encrypted text: %sn", $encrypted);
+
+
+echo '<hr>';
+
+
+
+
+$cipher = BlockCipher::factory('mcrypt', array('algorithm' => 'blowfish'));
+$cipher->setKey('this is the encryption key');
+$encrypted  = $cipher->decrypt($encrypted);
+
+printf("Decrypted text: %sn", $encrypted);
+?>
+
+
+
+
+
+
+
+
 
 <?php
 $headTitle = 'Example';
