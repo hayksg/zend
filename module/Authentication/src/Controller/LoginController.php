@@ -57,7 +57,7 @@ class LoginController extends AbstractActionController
                     $incorrect = 'Incorrect username or password';
                 } else {
                     if ($request->getPost('rememberMe') == 1) {
-                        $time = time() + 3600 * 24 * 360;
+                        $time = time() + 3600 * 24 * 30;
                         $this->authStorage->setRememberMe(1, $time);
                         $this->ormAuthService->setStorage($this->authStorage);
 

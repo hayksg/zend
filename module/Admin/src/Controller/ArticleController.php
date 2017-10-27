@@ -154,7 +154,36 @@ class ArticleController extends AbstractActionController
 
     public function deleteAction()
     {
-        return new ViewModel();
+        try {
+            $id = intval($this->getEvent()->getRouteMatch()->getParam('id', 0));
+            $article = $this->articleRepository->find($id);
+            $request = $this->getRequest();
+
+            if (! $id || ! $article || ! $request->isPost()) {
+                throw new \Error('Some error information');
+            }
+        } catch (\Throwable $e) {
+            return $this->notFoundAction();
+            //echo $e->getMessage(); // set to log
+        }
+
+        $form = $this->formService->getAnnotationForm($article);
+        $form->setValidationGroup(['csrf']);
+        $form->setData($request->getPost());
+
+        if ($form->isValid()) {
+            $article = $form->getData();
+            $this->deleteImage($article);
+
+            $this->entityManager->remove($article);
+            $this->entityManager->flush();
+
+            $this->flashMessenger()->addSuccessMessage('Article deleted');
+            return $this->redirect()->toRoute('admin/article');
+        }
+
+        $this->flashMessenger()->addErrorMessage('An error occur');
+        return $this->redirect()->toRoute('admin/article');
     }
 
     private function getCategoryWhichHasNotParentCategory($form)
