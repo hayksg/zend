@@ -115,6 +115,43 @@ printf("Decrypted text: %sn", $encrypted);
 
 
 
+<?php
+
+echo '<hr>';
+
+$pathToLogFile = getcwd() . '/data/log/log.txt';
+
+if (is_file($pathToLogFile)) {
+    $writer = new Zend\Log\Writer\Stream($pathToLogFile);
+    $logger = new Zend\Log\Logger();
+    $logger->addWriter($writer);
+
+    try {
+        $a = rand(0, 10);
+        $b = rand(0, 1);
+
+        if ($b == 0) {
+            throw new \Exception('Cannot divide to zero');
+        }
+
+        echo $a . ' / ' . $b . ' = ' . $a / $b;
+    } catch (\Exception $e) {
+        $errorMessage = "\n\t";
+        $errorMessage .= 'File: ' . $e->getFile() . "\n\t";
+        $errorMessage .= 'Line: ' . $e->getLine() . "\n\t";
+        $errorMessage .= 'Message: ' . $e->getMessage();
+
+        $logger->info($errorMessage);
+    }
+}
+
+
+
+
+?>
+
+
+
 
 
 

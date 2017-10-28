@@ -6,6 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Category;
+use Application\Entity\Article;
 use Application\Service\FormServiceInterface;
 use Zend\I18n\Translator\TranslatorInterface;
 
@@ -146,11 +147,33 @@ class CategoryController extends AbstractActionController
         if ($form->isValid()) {
             $category = $form->getData();
 
+            /* Block for deletion nested articles images (on server) (If category has nested categories) */
+            $nestedCategoriesChain = $this->getNestedCategoriesChain($id);
 
+            array_walk_recursive($nestedCategoriesChain, function($category) {
+                $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category->getId()]);
 
+                if (isset($articles)) {
+                    array_walk_recursive($articles, function($article){
+                        if (is_file(getcwd() . '/public' . $article->getImage())) {
+                            unlink(getcwd() . '/public' . $article->getImage());
+                        }
+                    });
+                }
+            });
+            /* End block */
 
+            /* Block for deletion articles images in category (on server) (If category has not nested categories) */
+            $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category]);
 
-
+            if ($articles) {
+                foreach ($articles as $article) {
+                    if (is_file(getcwd() . '/public' . $article->getImage())) {
+                        unlink(getcwd() . '/public' . $article->getImage());
+                    }
+                }
+            }
+            /* End block */
 
             $this->entityManager->remove($category);
             $this->entityManager->flush();
@@ -184,5 +207,19 @@ class CategoryController extends AbstractActionController
         }
     }
 
+    private function getNestedCategoriesChain($categoryId)
+    {
+        $result = [];
+        $categories = $this->entityManager->getRepository(Category::class)->findBy(['parent' => $categoryId]);
+        if (! empty($categories)) {
+            foreach ($categories as $category) {
+                if (! empty($category) && count($category) !== 0) {
+                    $result[] = $category;
+                    $result[] = $this->getNestedCategoriesChain($category->getId());
+                }
+            }
+        }
 
+        return $result;
+    }
 }

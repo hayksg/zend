@@ -28,7 +28,8 @@
         "zendframework/zend-captcha": "^2.7",
         "zendframework/zend-mvc-plugin-identity": "^1.0",
         "zendframework/zend-i18n": "^2.7",
-        "zendframework/zend-crypt": "^3.2"
+        "zendframework/zend-crypt": "^3.2",
+        "firephp/firephp-core": "dev-master"
     },
     "autoload": {
         "psr-4": {

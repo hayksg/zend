@@ -41,7 +41,8 @@ class Module
     {
         return [
             'invokables' => [
-                'getYear' => View\Helper\GetYear::class,
+                'getYear'  => View\Helper\GetYear::class,
+                'setImage' => View\Helper\SetImage::class,
             ],
             'factories' => [
                 'getCategories' => function ($container) {

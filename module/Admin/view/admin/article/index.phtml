@@ -50,7 +50,7 @@ $this->headTitle($headTitle);
                     <td><?= $this->getTooltip($this->escapeHtml($article->getShortContent())) ?></td>
                     <td><?= $this->getTooltip($this->escapeHtml($article->getContent())) ?></td>
                     <td>
-                        <img src="<?= $this->basePath() ?><?= $this->escapeHtml($article->getImage()) ?>"
+                        <img src="<?= $this->basePath() ?><?= $this->setImage($this->escapeHtml($article->getImage())) ?>"
                              class="img-responsive"
                              width="60"
                              height="40"
