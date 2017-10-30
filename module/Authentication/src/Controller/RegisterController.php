@@ -57,7 +57,38 @@ class RegisterController extends AbstractActionController
                     return ['form' => $form];
                 }
 
+
+
+
+
+                /*$filter = new \Zend\Filter\Encrypt();
+                $filter->setKey('encryption key');
+                $filter->setVector('12345678901234567890');
+
+                $login = $user->getName();
+                $user->setName($filter->filter($login));*/
+
+                $this->encryptLogin($user);
+
                 $cloneUser = clone $user; // to have not hashed password
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 $hash = (new Bcrypt())->create($user->getPassword());
                 $user->setPassword($hash);

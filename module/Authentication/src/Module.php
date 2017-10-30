@@ -91,7 +91,17 @@ class Module
     {
         return [
             'invokables' => [
-                'cryptData' => Controller\Plugin\CryptData::class,
+                'cryptData'    => Controller\Plugin\CryptData::class,
+                'encryptLogin' => Controller\Plugin\EncryptLogin::class,
+            ],
+        ];
+    }
+
+    public function getViewHelperConfig()
+    {
+        return [
+            'invokables' => [
+                'decryptLogin' => View\Helper\DecryptLogin::class,
             ],
         ];
     }

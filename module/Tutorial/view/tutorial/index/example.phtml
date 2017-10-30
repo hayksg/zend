@@ -150,6 +150,34 @@ if (is_file($pathToLogFile)) {
 
 ?>
 
+<?php
+echo '<hr>';
+echo '<hr>';
+echo '<hr>';
+
+$filter = new \Zend\Filter\Encrypt();
+$filter->setKey('imeetvseprava'); //
+$filter->setVector('36452049153098394715');
+$content = $filter->filter('message');
+printf("%s\n", $content);
+
+
+
+
+
+
+
+
+// use the default adapter that is BlockCipher
+$filter = new Zend\Filter\Decrypt();
+$filter->setKey('imeetvseprava');
+printf("Decrypt: %s\n", $filter->filter($content));
+
+
+
+
+?>
+
 
 
 
