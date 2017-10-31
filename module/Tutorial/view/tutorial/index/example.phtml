@@ -155,23 +155,33 @@ echo '<hr>';
 echo '<hr>';
 echo '<hr>';
 
+// For superadmin
+/*$filter = new \Zend\Filter\Encrypt();
+$filter->setKey('imeetvseprava'); //
+$filter->setVector('36452049153098394715');
+$content = $filter->filter('John Smith_super');
+printf("%s\n", $content);
+echo '<br>';
+echo strlen($content);*/
+
+
+
+// For admin
 $filter = new \Zend\Filter\Encrypt();
 $filter->setKey('imeetvseprava'); //
 $filter->setVector('36452049153098394715');
-$content = $filter->filter('message');
+$content = $filter->filter('Vasya Pupkin_admin');
 printf("%s\n", $content);
-
-
-
-
+echo '<br>';
+echo strlen($content);
 
 
 
 
 // use the default adapter that is BlockCipher
-$filter = new Zend\Filter\Decrypt();
-$filter->setKey('imeetvseprava');
-printf("Decrypt: %s\n", $filter->filter($content));
+/*$filter = new Zend\Filter\Decrypt();
+$filter->setKey('admin');
+printf("Decrypt: %s\n", $filter->filter($content));*/
 
 
 

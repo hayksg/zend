@@ -15,13 +15,15 @@ class CheckAdmin extends AbstractPlugin
         $this->entityManager = $entityManager;
     }
 
-    public function __invoke($user)
+    public function __invoke($user, $controller)
     {
         if ($user && $user->getId()) {
             $admin = $this->entityManager->getRepository(User::class)->findBy(['id' => (int)$user->getId()]);
             $role = $admin[0]->getRole();
 
-            if ($role === 'admin' || $role === 'superadmin') {
+            $userRole = $controller->decryptAdmin($role);
+
+            if(substr($userRole, -4) == 'uper' || substr($userRole, -4) == 'dmin') {
                 return true;
             }
         }

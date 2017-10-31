@@ -51,17 +51,13 @@
                              ->setUlClass('nav navbar-nav')
                              ->render() ?>
                     <?php if (isset($user) && $user->getRole() !== null) : ?>
-                        <?php
-                        var_dump(substr($this->decryptLogin(false, $this->escapeHtml($user->getRole())), -4))
-                        ?>
-
-                        <?php if(substr($this->decryptLogin(false, $this->escapeHtml($user->getRole())), -4) != 'user') : ?>
+                        <?php $userRole = $this->decryptLogin(false, $this->escapeHtml($user->getRole())); ?>
+                        <?php if(substr($userRole, -4) == 'uper' || substr($userRole, -4) == 'dmin') : ?>
                         <ul class="nav navbar-nav">
                             <li><a href="/admin"><?= $this->translate('Admin') ?></a></li>
                         </ul>
                         <?php endif; ?>
                     <?php endif; ?>
-
                     <div class="registration-block pull-right">
                         <?php if ($user) : ?>
                             <span><?= $this->translate('Hi') ?>

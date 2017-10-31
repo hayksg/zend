@@ -64,6 +64,9 @@ class Module
                     );
                 },
             ],
+            'invokables' => [
+                'decryptAdmin' => Controller\Plugin\DecryptAdmin::class,
+            ],
         ];
     }
 
@@ -114,7 +117,7 @@ class Module
             function ($e) {
                 $controller = $e->getTarget();
                 $user = $controller->identity();
-                $controller->checkAdmin($user);
+                $controller->checkAdmin($user, $controller);
             },
             1000
         );

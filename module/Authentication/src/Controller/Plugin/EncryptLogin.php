@@ -21,7 +21,7 @@ class EncryptLogin extends AbstractPlugin
         $filter->setKey('geografiya');
         $filter->setVector('05050694823123069261');
 
-        $role = $login . 'user';
+        $role = $login . '_user';
         $user->setRole($filter->filter($role));
     }
 }

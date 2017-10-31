@@ -66,3 +66,35 @@
 	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
 	Line: 134
 	Message: Cannot divide to zero
+2017-10-31T18:38:46+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T18:38:52+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T18:38:53+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T18:40:18+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T18:40:20+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T18:42:58+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T19:00:42+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
+2017-10-31T19:00:45+00:00 INFO (6): 
+	File: C:\wamp64\www\zend.loc\module\Tutorial\view\tutorial\index\example.phtml
+	Line: 134
+	Message: Cannot divide to zero
