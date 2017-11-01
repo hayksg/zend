@@ -22,8 +22,9 @@ class CheckAdmin extends AbstractPlugin
             $role = $admin[0]->getRole();
 
             $userRole = $controller->decryptAdmin($role);
+            $userRole = substr($userRole, strpos($userRole, '_') + 1);
 
-            if(substr($userRole, -4) == 'uper' || substr($userRole, -4) == 'dmin') {
+            if($userRole === 'super' || $userRole === 'admin') {
                 return true;
             }
         }

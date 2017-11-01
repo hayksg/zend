@@ -41,6 +41,13 @@ class Module
                         $container->get('translator')
                     );
                 },
+                Controller\UserController::class => function ($container) {
+                    return new Controller\UserController(
+                        $container->get(EntityManager::class),
+                        $container->get('formService'),
+                        $container->get('translator')
+                    );
+                },
             ],
         ];
     }
@@ -82,7 +89,7 @@ class Module
                 }
             ],
             'invokables' => [
-                'getTooltip' => View\Helper\GetTooltip::class,
+                'getTooltip'  => View\Helper\GetTooltip::class,
             ],
         ];
     }

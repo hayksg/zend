@@ -50,6 +50,20 @@ return [
                             ],
                         ],
                     ],
+                    'user' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'       => '/user[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\UserController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -101,6 +115,22 @@ return [
                             'edit' => [
                                 'label' => 'Edit article',
                                 'route' => 'admin/article',
+                                'action' => 'edit',
+                            ],
+                        ],
+                    ],
+                    'user' => [
+                        'label' => 'Users',
+                        'route' => 'admin/user',
+                        'pages' => [
+                            'add' => [
+                                'label' => 'Add user',
+                                'route' => 'admin/user',
+                                'action' => 'add',
+                            ],
+                            'edit' => [
+                                'label' => 'Edit user',
+                                'route' => 'admin/user',
                                 'action' => 'edit',
                             ],
                         ],

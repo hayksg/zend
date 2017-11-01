@@ -1,0 +1,50 @@
+<?php
+$headTitle = 'User';
+$this->headTitle($headTitle);
+?>
+<?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="pull-right app-message">
+            <?php
+            echo $this->flashMessenger()->render('success', ['success-message']);
+            echo $this->flashMessenger()->render('error',   ['error-message']);
+            ?>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <?php if (! $this->users) : ?>
+        <h4>List is empty</h4>
+        <?php else : ?>
+        <h4>Users list</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Registration date</th>
+                        <th>Actions</th>
+                    </tr>
+                    <?php foreach ($this->users as $user) : ?>
+                    <tr>
+                        <td><?= ++$this->cnt ?></td>
+                        <td><?= $this->decryptLogin($user->getName()) ?></td>
+                        <td><?= $user->getEmail() ?></td>
+                        <td><?= $this->decryptLogin(false, $user->getRole()) ?></td>
+                        <td><?= $user->getRegistrationDate()->format('d F Y') ?></td>
+                        <td>
+                            <a href="#">Edit</a>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

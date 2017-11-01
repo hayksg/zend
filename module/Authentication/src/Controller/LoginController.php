@@ -51,19 +51,7 @@ class LoginController extends AbstractActionController
             if ($form->isValid()) {
                 $user = $form->getData();
 
-
-
-                /*$filter = new \Zend\Filter\Encrypt();
-                $filter->setKey('encryption key');
-                $filter->setVector('12345678901234567890');
-
-                $login = $user->getName();
-                $user->setName($filter->filter($login));*/
-
                 $this->encryptLogin($user);
-
-
-
 
                 $authResult = $this->entityManager->getRepository(User::class)->login($user, $this->ormAuthService);
 

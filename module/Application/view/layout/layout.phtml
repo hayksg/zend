@@ -52,7 +52,8 @@
                              ->render() ?>
                     <?php if (isset($user) && $user->getRole() !== null) : ?>
                         <?php $userRole = $this->decryptLogin(false, $this->escapeHtml($user->getRole())); ?>
-                        <?php if(substr($userRole, -4) == 'uper' || substr($userRole, -4) == 'dmin') : ?>
+                        <?php $userRole = substr($userRole, strpos($userRole, '_') + 1); ?>
+                        <?php if($userRole === 'super' || $userRole === 'admin') : ?>
                         <ul class="nav navbar-nav">
                             <li><a href="/admin"><?= $this->translate('Admin') ?></a></li>
                         </ul>
