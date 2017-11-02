@@ -67,4 +67,10 @@ return [
     "Short content" => "Описание",
     "Short content" => "Описание",
     "by" => "от",
+    "Users" => "Пользователи",
+    "Admin's list" => "Список админов",
+    "User's list" => "Список пользователей",
+    "List is empty" => "Список пуст",
+    "Admin's list is empty" => "Список админов пуст",
+    "User's list is empty" => "Пользовательский список пуст",
 ];

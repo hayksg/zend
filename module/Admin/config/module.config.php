@@ -10,9 +10,12 @@ return [
     'router' => [
         'routes' => [
             'admin' => [
-                'type' => Literal::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route'    => '/admin',
+                    'route'    => '/admin[/:action]',
+                    'constraints' => [
+                        'action' => '[a-z]+',
+                    ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
@@ -50,16 +53,30 @@ return [
                             ],
                         ],
                     ],
-                    'user' => [
+                    'client' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/user[/:action[/:id]]',
+                            'route'       => '/client[/:action[/:id]]',
                             'constraints' => [
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',
                             ],
                             'defaults' => [
-                                'controller' => Controller\UserController::class,
+                                'controller' => Controller\ClientController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                    'admin' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'       => '/admin[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AdminController::class,
                                 'action'     => 'index',
                             ],
                         ],
@@ -87,6 +104,11 @@ return [
                 'label' => 'Admin',
                 'route' => 'admin',
                 'pages' => [
+                    'users' => [
+                        'label'  => 'Users',
+                        'route'  => 'admin',
+                        'action' => 'users',
+                    ],
                     'category' => [
                         'label' => 'Categories',
                         'route' => 'admin/category',
@@ -119,18 +141,34 @@ return [
                             ],
                         ],
                     ],
-                    'user' => [
-                        'label' => 'Users',
-                        'route' => 'admin/user',
+                    'client' => [
+                        'label' => 'Clients',
+                        'route' => 'admin/client',
                         'pages' => [
                             'add' => [
-                                'label' => 'Add user',
-                                'route' => 'admin/user',
+                                'label' => 'Add client',
+                                'route' => 'admin/client',
                                 'action' => 'add',
                             ],
                             'edit' => [
-                                'label' => 'Edit user',
-                                'route' => 'admin/user',
+                                'label' => 'Edit client',
+                                'route' => 'admin/client',
+                                'action' => 'edit',
+                            ],
+                        ],
+                    ],
+                    'admin' => [
+                        'label' => 'Admins',
+                        'route' => 'admin/admin',
+                        'pages' => [
+                            'add' => [
+                                'label' => 'Add admin',
+                                'route' => 'admin/admin',
+                                'action' => 'add',
+                            ],
+                            'edit' => [
+                                'label' => 'Edit admin',
+                                'route' => 'admin/admin',
                                 'action' => 'edit',
                             ],
                         ],

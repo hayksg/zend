@@ -41,8 +41,15 @@ class Module
                         $container->get('translator')
                     );
                 },
-                Controller\UserController::class => function ($container) {
-                    return new Controller\UserController(
+                Controller\ClientController::class => function ($container) {
+                    return new Controller\ClientController(
+                        $container->get(EntityManager::class),
+                        $container->get('formService'),
+                        $container->get('translator')
+                    );
+                },
+                Controller\AdminController::class => function ($container) {
+                    return new Controller\AdminController(
                         $container->get(EntityManager::class),
                         $container->get('formService'),
                         $container->get('translator')

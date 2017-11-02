@@ -9,7 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Application\Service\FormServiceInterface;
 use Zend\I18n\Translator\TranslatorInterface;
 
-class UserController extends AbstractActionController
+class ClientController extends AbstractActionController
 {
     private $entityManager;
     private $userRepository;
@@ -33,8 +33,9 @@ class UserController extends AbstractActionController
 
         $viewModel = new ViewModel();
         $viewModel->setVariables([
-            'cnt'   => 0,
-            'users' => $users,
+            'cntAdmin' => 0,
+            'cntUser'  => 0,
+            'users'    => 0,
         ]);
         return $viewModel;
     }

@@ -1,0 +1,12 @@
+<?php
+$headTitle = 'Admin';
+$this->headTitle($headTitle);
+?>
+<?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
+<div>
+    <p><?= $this->translate('You have following capabilities') ?>:</p>
+    <ul class="list-unstyled">
+        <li><a href="<?= $this->url('admin/admin') ?>"><?= $this->translate('Manage admins') ?></a></li>
+        <li><a href="<?= $this->url('admin/client') ?>"><?= $this->translate('Manage clients') ?></a></li>
+    </ul>
+</div>

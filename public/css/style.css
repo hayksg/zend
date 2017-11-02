@@ -158,6 +158,10 @@ form ul li {
     color: #d00;
 }
 
+.admin-manage-block a:hover, .admin-manage-block a:focus {
+    text-decoration: none;
+}
+
 
 
 

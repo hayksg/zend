@@ -5,9 +5,27 @@ $this->headTitle($headTitle);
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div>
     <p><?= $this->translate('You have following capabilities') ?>:</p>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled admin-manage-block">
         <li><a href="<?= $this->url('admin/category') ?>"><?= $this->translate('Manage categories') ?></a></li>
         <li><a href="<?= $this->url('admin/article') ?>"><?= $this->translate('Manage articles') ?></a></li>
-        <li><a href="<?= $this->url('admin/user') ?>"><?= $this->translate('Manage users') ?></a></li>
+        <li>
+            <a data-toggle="collapse" href="#collapseBlock" aria-expanded="false" aria-controls="collapseBlock">
+                <?= $this->translate('Manage users') ?>
+            </a>
+            <div class="collapse" id="collapseBlock">
+                <ul class="">
+                    <li>
+                        <a href="<?= $this->url('admin', ['action' => 'users'] ) ?>">
+                            <?= $this->translate('Manage admins') ?>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $this->url('admin', ['action' => 'users'] ) ?>">
+                            <?= $this->translate('Manage clients') ?>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>
