@@ -70,7 +70,7 @@ class CategoryController extends AbstractActionController
                 $this->entityManager->persist($category);
                 $this->entityManager->flush();
 
-                $this->flashMessenger()->addSuccessMessage('Category added.');
+                $this->flashMessenger()->addSuccessMessage('Category added');
                 return $this->redirect()->toRoute('admin/category');
             }
         }
@@ -117,7 +117,7 @@ class CategoryController extends AbstractActionController
                 $this->entityManager->persist($category);
                 $this->entityManager->flush();
 
-                $this->flashMessenger()->addSuccessMessage('Category edited.');
+                $this->flashMessenger()->addSuccessMessage('Category edited');
                 return $this->redirect()->toRoute('admin/category');
             }
         }
@@ -178,9 +178,9 @@ class CategoryController extends AbstractActionController
             $this->entityManager->remove($category);
             $this->entityManager->flush();
 
-            $this->flashMessenger()->addSuccessMessage('Category deleted.');
+            $this->flashMessenger()->addSuccessMessage('Category deleted');
         } else {
-            $this->flashMessenger()->addSuccessMessage('Cannot delete category.');
+            $this->flashMessenger()->addSuccessMessage('Cannot delete category');
         }
 
         return $this->redirect()->toRoute('admin/category');

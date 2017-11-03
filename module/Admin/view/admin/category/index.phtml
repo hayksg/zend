@@ -14,8 +14,8 @@ $this->headTitle($headTitle);
     <div class="col-sm-6">
         <div class="pull-right app-message">
             <?php
-            echo $this->flashMessenger()->render('success', ['success-message']);
-            echo $this->flashMessenger()->render('error',   ['error-message']);
+            echo $this->translate($this->flashMessenger()->render('success', ['success-message']));
+            echo $this->translate($this->flashMessenger()->render('error',   ['error-message']));
             ?>
         </div>
     </div>

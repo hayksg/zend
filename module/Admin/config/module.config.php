@@ -12,7 +12,7 @@ return [
             'admin' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/admin',
+                    'route'    => '/admin-area',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
@@ -23,9 +23,8 @@ return [
                     'category' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/category[/:action[/:id]]',
+                            'route'       => '/manage-categories[/:action[/:id]]',
                             'constraints' => [
-                                //'action' => '[a-z]+',
                                 'action' => '(add|edit|delete)',
                                 'id'     => '[0-9]+',
                             ],
@@ -38,7 +37,7 @@ return [
                     'article' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/articles[/page/:page][/:action[/:id]]',
+                            'route'       => '/manage-articles[/page/:page][/:action[/:id]]',
                             'constraints' => [
                                 'page'   => '[0-9]+',
                                 'action' => '[a-z]+',
@@ -53,7 +52,7 @@ return [
                     'user' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/user[/:action[/:id]]',
+                            'route'       => '/manage-users[/:action[/:id]]',
                             'constraints' => [
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',
@@ -67,7 +66,7 @@ return [
                     'admin' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/admin[/:action[/:id]]',
+                            'route'       => '/manage-admins[/:action[/:id]]',
                             'constraints' => [
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',

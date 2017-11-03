@@ -76,4 +76,6 @@ return [
     "List is empty" => "Список пуст",
     "Admin's list is empty" => "Список админов пуст",
     "User's list is empty" => "Пользовательский список пуст",
+    "Category edited" => "Категория обновлена",
+    "Category deleted" => "Категория удалена",
 ];

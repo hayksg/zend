@@ -55,7 +55,7 @@
                         <?php $userRole = substr($userRole, strpos($userRole, '_') + 1); ?>
                         <?php if($userRole === 'super' || $userRole === 'admin') : ?>
                         <ul class="nav navbar-nav">
-                            <li><a href="/admin"><?= $this->translate('Admin') ?></a></li>
+                            <li><a href="/admin-area"><?= $this->translate('Admin') ?></a></li>
                         </ul>
                         <?php endif; ?>
                     <?php endif; ?>
