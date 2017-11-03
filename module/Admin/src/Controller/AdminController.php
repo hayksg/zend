@@ -33,9 +33,8 @@ class AdminController extends AbstractActionController
 
         $viewModel = new ViewModel();
         $viewModel->setVariables([
-            'cntAdmin' => 0,
-            'cntUser'  => 0,
-            'users'    => 0,
+            'cnt'   => 0,
+            'users' => $users,
         ]);
         return $viewModel;
     }

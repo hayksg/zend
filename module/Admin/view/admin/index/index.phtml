@@ -1,5 +1,5 @@
 <?php
-$headTitle = 'Admin';
+$headTitle = 'Admin area';
 $this->headTitle($headTitle);
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
@@ -10,18 +10,18 @@ $this->headTitle($headTitle);
         <li><a href="<?= $this->url('admin/article') ?>"><?= $this->translate('Manage articles') ?></a></li>
         <li>
             <a data-toggle="collapse" href="#collapseBlock" aria-expanded="false" aria-controls="collapseBlock">
-                <?= $this->translate('Manage users') ?>
+                <?= $this->translate('Manage credentials') ?>
             </a>
             <div class="collapse" id="collapseBlock">
                 <ul class="">
                     <li>
-                        <a href="<?= $this->url('admin', ['action' => 'users'] ) ?>">
+                        <a href="<?= $this->url('admin/admin') ?>">
                             <?= $this->translate('Manage admins') ?>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= $this->url('admin', ['action' => 'users'] ) ?>">
-                            <?= $this->translate('Manage clients') ?>
+                        <a href="<?= $this->url('admin/user') ?>">
+                            <?= $this->translate('Manage users') ?>
                         </a>
                     </li>
                 </ul>

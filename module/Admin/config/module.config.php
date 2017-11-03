@@ -10,12 +10,9 @@ return [
     'router' => [
         'routes' => [
             'admin' => [
-                'type' => Segment::class,
+                'type' => Literal::class,
                 'options' => [
-                    'route'    => '/admin[/:action]',
-                    'constraints' => [
-                        'action' => '[a-z]+',
-                    ],
+                    'route'    => '/admin',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
@@ -53,16 +50,16 @@ return [
                             ],
                         ],
                     ],
-                    'client' => [
+                    'user' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'       => '/client[/:action[/:id]]',
+                            'route'       => '/user[/:action[/:id]]',
                             'constraints' => [
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',
                             ],
                             'defaults' => [
-                                'controller' => Controller\ClientController::class,
+                                'controller' => Controller\UserController::class,
                                 'action'     => 'index',
                             ],
                         ],
@@ -141,24 +138,24 @@ return [
                             ],
                         ],
                     ],
-                    'client' => [
-                        'label' => 'Clients',
-                        'route' => 'admin/client',
+                    'user' => [
+                        'label' => 'Users',
+                        'route' => 'admin/user',
                         'pages' => [
                             'add' => [
-                                'label' => 'Add client',
-                                'route' => 'admin/client',
+                                'label' => 'Add user',
+                                'route' => 'admin/user',
                                 'action' => 'add',
                             ],
                             'edit' => [
-                                'label' => 'Edit client',
-                                'route' => 'admin/client',
+                                'label' => 'Edit user',
+                                'route' => 'admin/user',
                                 'action' => 'edit',
                             ],
                         ],
                     ],
                     'admin' => [
-                        'label' => 'Admins',
+                        'label' => 'Manage admins',
                         'route' => 'admin/admin',
                         'pages' => [
                             'add' => [
