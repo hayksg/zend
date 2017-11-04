@@ -38,4 +38,16 @@ class UserController extends AbstractActionController
         ]);
         return $viewModel;
     }
+
+    public function editAction()
+    {
+
+        return [];
+    }
+
+    public function deleteAction()
+    {
+
+        return [];
+    }
 }
