@@ -41,8 +41,32 @@ class AdminController extends AbstractActionController
 
     public function editAction()
     {
+        $id = intval($this->params()->fromRoute('id', 0));
+        $user = $this->userRepository->find($id);
 
-        return [];
+        if (! $user) {
+            return $this->notFoundAction();
+        }
+
+        $form = $this->formService->getAnnotationForm($user);
+        $form->setValidationGroup('role');
+
+        $encryptedRole = $this->decryptAdmin($form->get('role')->getValue());
+
+        $poz = strpos($encryptedRole, '_') + 1;
+        $role = substr($encryptedRole, $poz);
+        $form->get('role')->setValue($role);
+        $form->get('submit')->setValue('Update');
+
+        if ($this->request->isPost()) {
+
+        }
+
+        return [
+            'id'   => $id,
+            'form' => $form,
+            'user' => $user,
+        ];
     }
 
     public function deleteAction()

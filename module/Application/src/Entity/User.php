@@ -3,12 +3,15 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Zend\Form\Annotation;
 
 /**
  * User
  *
  * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="user_name_u_k", columns={"name"})})
  * @ORM\Entity(repositoryClass="Application\Entity\Repository\UserRepository")
+ *
+ * @Annotation\Name("user")
  */
 class User
 {
@@ -46,6 +49,23 @@ class User
      * @var string
      *
      * @ORM\Column(name="role", type="string", length=10, precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Radio")
+     * @Annotation\Attributes({"class":"form-check-input"})
+     * @Annotation\Required({"required":"true"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Options({
+     *     "label":"Choose role:",
+     *     "label_attributes":{"class":"form-check-label"},
+     *     "value_options":{"user":"User", "admin":"Admin"},
+     * })
+     * @Annotation\Validator({
+     *     "name":"inArray",
+     *     "options":{
+     *         "haystack":{"user", "admin"},
+     *         "messages":{"notInArray":"Not valid value"},
+     *     },
+     * })
      */
     private $role = 'user';
 
@@ -60,6 +80,13 @@ class User
     {
         $this->registrationDate = new \DateTime();
     }
+
+    /**
+     * @Annotation\Name("Zend\Form\Element\Submit")
+     * @Annotation\Attributes({"class":"btn btn-default", "name":"submit", "value":"Submit"})
+     * @Annotation\AllowEmpty({"allowEmpty":"true"})
+     */
+    private $submit;
 
 
     /**

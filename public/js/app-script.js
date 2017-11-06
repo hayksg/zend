@@ -103,6 +103,9 @@ $(function(){
         $('[data-toggle="tooltip"]').tooltip();
     })
 
-    /////   ///
+    /////   Form user in admin area(for radio buttons)   //////////////////////
+
+    $('form#user label').css('display', 'block');
+    $('form#user label input').css('marginRight', '5px');
 
 });

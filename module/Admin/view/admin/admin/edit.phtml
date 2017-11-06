@@ -1,11 +1,26 @@
 <?php
 $headTitle = 'Edit admin';
 $this->headTitle($headTitle);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('admin/admin', ['action' => 'edit', 'id' => (int)$this->id]));
+$form->prepare();
 ?>
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div class="row">
     <div class="col-sm-12">
-
+        <h4 style="display:inline-block;">Admin: <em><?= $this->decryptLogin($user->getName()) ?></em><hr></h4>
+        <?= $this->form()->openTag($form) ?>
+        <div class="form-check">
+            <?= $this->formLabel($form->get('role')) ?>
+            <?= $this->formRadio($form->get('role')) ?>
+            <?= $this->formElementErrors($form->get('role')) ?>
+        </div>
+        <br>
+        <div class="form-group">
+            <?= $this->formSubmit($form->get('submit')) ?>
+        </div>
+        <?= $this->form()->openTag() ?>
     </div>
 </div>
 
