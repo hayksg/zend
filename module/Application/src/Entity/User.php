@@ -25,6 +25,13 @@ class User
     private $id;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Csrf")
+     * @Annotation\Name("csrf")
+     * @Annotation\Options({"csrf_options":{"timeout":"600"}})
+     */
+    private $csrf;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)

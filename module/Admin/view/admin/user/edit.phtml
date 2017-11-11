@@ -9,18 +9,33 @@ $form->prepare();
 <?= $this->partial('partial/title-and-breadcrumb', ['headTitle' => $headTitle]) ?>
 <div class="row">
     <div class="col-sm-12">
-        <h4 style="display:inline-block;">User: <em><?= $this->decryptLogin($user->getName()) ?></em><hr></h4>
+        <h4 style="display:inline-block;"><?= $this->translate('User') ?>:
+            <em><?= $this->decryptLogin($user->getName()) ?></em>
+            <hr>
+        </h4>
         <?= $this->form()->openTag($form) ?>
-        <div class="form-check">
-            <?= $this->formLabel($form->get('role')) ?>
-            <?= $this->formRadio($form->get('role')) ?>
-            <?= $this->formElementErrors($form->get('role')) ?>
+        <?= $this->formHidden($form->get('csrf')) ?>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <?= $this->formLabel($form->get('role')) ?>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <?= $this->formRadio($form->get('role')) ?>
+                            <?= $this->formElementErrors($form->get('role')) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
+        <hr>
         <div class="form-group">
             <?= $this->formSubmit($form->get('submit')) ?>
         </div>
         <?= $this->form()->openTag() ?>
     </div>
 </div>
-

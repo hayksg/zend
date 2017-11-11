@@ -49,7 +49,7 @@ class AdminController extends AbstractActionController
         }
 
         $form = $this->formService->getAnnotationForm($user);
-        $form->setValidationGroup('role');
+        $form->setValidationGroup(['csrf', 'role']);
 
         $encryptedRole = $this->decryptAdmin($form->get('role')->getValue());
 
@@ -59,7 +59,20 @@ class AdminController extends AbstractActionController
         $form->get('submit')->setValue('Update');
 
         if ($this->request->isPost()) {
+            $form->setData($this->request->getPost());
 
+            if ($form->isValid()) {
+                $user = $form->getData();
+                $role = $user->getRole();
+                $name = $user->getName();
+
+                $this->editTheFieldRole($user, $name, $role);
+
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+
+                return $this->redirect()->toRoute('admin/admin');
+            }
         }
 
         return [

@@ -79,7 +79,9 @@ class Module
                 },
             ],
             'invokables' => [
-                'decryptAdmin' => Controller\Plugin\DecryptAdmin::class,
+                'decryptAdmin'     => Controller\Plugin\DecryptAdmin::class,
+                'editTheFieldRole' => Controller\Plugin\EditTheFieldRole::class,
+
             ],
         ];
     }
