@@ -108,4 +108,16 @@ $(function(){
     $('form#user label').css('display', 'block');
     $('form#user label input').css('marginRight', '5px');
 
+    /////////////////////////////////
+
+    //console.log($('form.form-delete input[type="submit"]'));
+    console.log('Hello');
+
+
+    /*$('form.form-delete').on('submit', function(){
+        console.log(alert('Hello'));
+        console.log('Hello');
+        //$(this).css('paddingRight', 20);
+    });*/
+
 });

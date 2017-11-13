@@ -145,13 +145,18 @@ form.form-delete input[type="submit"] {
     display: inline-block;
     border: none;
     background: none;
-    padding-left: 0;
+    padding: 0;
     color: #93c54b;
 }
 
 form.form-delete input[type="submit"]:hover {
     text-decoration: underline;
     color: #79a736;
+}
+
+form.form-delete input[type="submit"]:focus {
+    text-decoration: underline;
+    outline: none;
 }
 
 form ul li {

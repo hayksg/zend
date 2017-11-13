@@ -29,10 +29,14 @@ class AdminController extends AbstractActionController
 
     public function indexAction()
     {
+        $user = new User;
+        $form = $this->formService->getAnnotationForm($user);
+
         $users = $this->userRepository->findAll();
 
         $viewModel = new ViewModel();
         $viewModel->setVariables([
+            'form'  => $form,
             'cnt'   => 0,
             'users' => $users,
         ]);
